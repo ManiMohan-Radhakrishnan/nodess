@@ -34,6 +34,15 @@ section.detail-page-content {
   .bid_section_wrapper {
     padding-top: 1.5rem;
     background: #1d1c2c;
+    .sec-title {
+      h1 {
+        margin: 0;
+        font-size: 3rem;
+        line-height: normal;
+        color: #fff;
+        text-align: center;
+      }
+    }
     .player_stats {
       position: absolute;
       top: 3rem;
@@ -355,7 +364,7 @@ section.detail-page-content {
         }
       }
       &.gold_color {
-        background: #cebd48 !important;
+        background: #464375 !important;
         &::before {
           content: "";
           position: absolute;
@@ -366,7 +375,7 @@ section.detail-page-content {
           background: #000;
           background: #1d1c2c;
           z-index: 0;
-          box-shadow: inset 0px 0px 30px #cebd48 !important;
+          // box-shadow: inset 0px 0px 30px #cebd48 !important;
         }
       }
       &.multi_color {

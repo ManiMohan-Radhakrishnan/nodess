@@ -7,6 +7,12 @@ import { Popover } from "react-bootstrap";
 import { calculateTimeLeft } from "../../utils/common";
 
 import { getHideMenuStatus } from "../../redux/reducers/user_reducer";
+import style from "./style.module.scss";
+import Link from "next/link";
+import { FaCircleChevronRight } from "react-icons/fa6";
+import { FiMinusCircle, FiPlusCircle } from "react-icons/fi";
+import { MdOutlineDiscount } from "react-icons/md";
+import { LiaExternalLinkAltSolid } from "react-icons/lia";
 
 const NFTBaseDetails = ({
   nft,
@@ -51,44 +57,44 @@ const NFTBaseDetails = ({
 
   return (
     <>
-      <div className={`creator mt-3 mb-3`}>
-        <span
-          className="link"
-          // onClick={() => {
-          //   if (
-          //     nftData?.core_statistics?.role?.value?.toLowerCase() ===
-          //       "batsman" ||
-          //     nftData?.core_statistics?.role?.value?.toLowerCase() === "bowler"
-          //   )
-          //     return router.push(
-          //       `/nft-marketplace/cricket-player-nfts/${nftData?.category_slug}`
-          //     );
-          //   if (nftData?.core_statistics?.role?.value?.toLowerCase() === "bat")
-          //     return router.push(
-          //       `/nft-marketplace/cricket-bat-nfts/${nftData?.category_slug}`
-          //     );
-          //   if (nftData?.core_statistics?.role?.value === "Shot")
-          //     return router.push(
-          //       `/nft-marketplace/cricket-shot-nfts/${nftData?.category_slug}`
-          //     );
-          //   if (nftData?.core_statistics?.role?.value === "Fusor")
-          //     return router.push(
-          //       `/nft-marketplace/cricket-fusor-nfts/${nftData?.category_slug}`
-          //     );
-          // }}
-        >
-          {nftData?.category_name}
-        </span>{" "}
-        | {nftData?.celebrity_name} Exclusive NFTs
-      </div>
-      <div className={"nft-title-container"}>
-        <h1 className={"nft-title"}>{nftData?.name}</h1>
-      </div>
-      <div className={`text-secondary mt-1 mb-5 nft-desc`}>
-        {nftData?.description && (
-          <p>{nftData?.description}xxxfsfdfdfdfsdFSDVF</p>
-        )}
-      </div>
+      <section className={style["verifier-info-block"]}>
+        <div className={style["title-wrapper"]}>
+          <p> Timezone: UTC +5:30</p>
+          <p>Timeline updates</p>
+        </div>
+        <div className={style["verifier-info-wrapper"]}>
+          <div className={style["purchase-info-wrapper"]}>
+            <FaCircleChevronRight color="#fff" />
+            <div className={style["title-wrapper"]}>
+              <p> Purchased</p>
+              Start
+            </div>
+            <div className={style["line"]}></div>
+            <div className={style["progress-wrapper"]}>
+              <p>Remaining Node</p>
+              <div className={style["cus-progress-wrapper"]}>
+                <div
+                  className={`progress ${style["cus-progress"]}`}
+                  role="progressbar"
+                  aria-label="Example 1px high"
+                  aria-valuenow="25"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
+                  <div
+                    className={`progress-bar ${style["cus-progress-bar"]}`}
+                    style={{ width: "25%" }}
+                  ></div>
+                </div>
+                <div className={style["progress-text"]}>
+                  <span>24/3000 CARV Node sold</span>
+                  <span>25%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 };

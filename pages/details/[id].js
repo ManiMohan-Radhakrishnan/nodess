@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
-import { useRouter } from "next/router";
 import _ from "lodash";
 
 import NFTMedia from "../../components/nft-media";
@@ -14,6 +12,9 @@ const Details = ({ nft, nftOwner = [] }) => {
       <section className="detail-page-content background-set">
         <div className="bid_section_wrapper">
           <div className="container-fluid">
+            <div className="sec-title">
+              <h1>Tier 10 -</h1>
+            </div>
             <div className="row fit-to-height">
               <div className="col-12 col-lg-7">
                 <NFTMedia

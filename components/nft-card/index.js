@@ -1,19 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useSelector } from "react-redux";
-import { useRouter } from "next/router";
 
 import style from "./style.module.scss";
-import { getHomeMenuStatus } from "../../redux/reducers/user_reducer";
-import { useState } from "react";
 
-const NFTCard = ({ className, nft }) => {
+const NFTCard = ({ nft }) => {
   const url = `details/${nft?.saleId}`;
 
   return (
-    <div
-      className={`${style["more-card"]} ${style["more-card-new"]} ${style[className]}`}
-    >
+    <div className={`${style["more-card"]} ${style["more-card-new"]} `}>
       <Link legacyBehavior href={url}>
         <a>
           <div className={style["more-card-header"]}>
