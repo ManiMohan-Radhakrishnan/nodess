@@ -3,12 +3,15 @@ import _ from "lodash";
 
 import NFTMedia from "../../components/nft-media";
 import NFTBaseDetails from "../../components/nft-basic-details";
+import NFTProperties from "../../components/nft-properties";
+import Header from "../../components/header";
 
 const Details = ({ nft, nftOwner = [] }) => {
   const [putOnSalePop, setPutOnSalePop] = useState(false);
 
   return (
     <>
+      <Header />
       <section className="detail-page-content background-set">
         <div className="bid_section_wrapper">
           <div className="container-fluid">
@@ -35,6 +38,15 @@ const Details = ({ nft, nftOwner = [] }) => {
                 // ownerOrdersList={ownerOrdersList}
                 // owners={nftOwner}
                 />
+              </div>
+            </div>
+            <div className="row fit-to-height">
+              <div className="col-12 col-lg-6">
+                <NFTProperties />
+              </div>
+
+              <div className="col-12 col-lg-6">
+                <NFTProperties />
               </div>
             </div>
           </div>

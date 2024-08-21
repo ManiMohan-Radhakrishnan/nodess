@@ -1311,8 +1311,8 @@ input::-webkit-inner-spin-button {
     position: relative;
     text-transform: capitalize;
     font-size: 1rem;
-    background: transparent linear-gradient(180deg, #ef9e5e 0%, #ec7c49 100%) 0%
-      0% no-repeat padding-box;
+    background: rgb(138, 90, 255);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     border: solid 1px transparent;
     border-radius: 50rem;
     font-family: $proxima-nova;
@@ -1333,9 +1333,9 @@ input::-webkit-inner-spin-button {
       &:hover,
       &:focus,
       &:active {
-        border: solid 1px #ec7c49 !important;
+        border: solid 1px rgb(138, 90, 255) !important;
         background: transparent;
-        color: #ec7c49 !important;
+        color: rgb(138, 90, 255) !important;
       }
     }
     &.rounded-bordered {
