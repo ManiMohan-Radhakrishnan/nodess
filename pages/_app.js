@@ -31,6 +31,7 @@ import { SSRProvider } from "react-bootstrap";
 
 import useOnlineStatus from "../hooks/useOnlineOfflineStatus";
 import OnlineStatus from "./online-status";
+import RainbowKit from "./rainbowkit";
 
 function MyApp({ Component, pageProps }) {
   const isOnline = useOnlineStatus();
@@ -102,20 +103,22 @@ function MyApp({ Component, pageProps }) {
       <div className="whole-content background-set">
         {/* <SSRProvider> */}
         {/* {isOnline ? ( */}
-        <Provider store={store}>
-          <Component {...pageProps} />
-          <ToastContainer
-            position="top-right"
-            autoClose={15000}
-            hideProgressBar
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-          />
-        </Provider>
+        <RainbowKit>
+          <Provider store={store}>
+            <Component {...pageProps} />
+            <ToastContainer
+              position="top-right"
+              autoClose={15000}
+              hideProgressBar
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+            />
+          </Provider>
+        </RainbowKit>
         {/* // ) : (
         //   <>
         //     <OnlineStatus />

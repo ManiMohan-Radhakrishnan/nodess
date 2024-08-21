@@ -2,13 +2,22 @@ import Link from "next/link";
 import Image from "next/image";
 
 import style from "./style.module.scss";
+import { useRouter } from "next/router";
 
 const NFTCard = ({ nft }) => {
-  const url = `details/${nft?.saleId}`;
+  const router = useRouter();
+
+  const handlePurchaseClick = () => {
+    const url = `/details/${nft?.saleId}`;
+    router.push(url); // Navigates to the generated URL
+  };
 
   return (
-    <div className={`${style["more-card"]} ${style["more-card-new"]} `}>
-      <Link legacyBehavior href={url}>
+    <div
+      className={`${style["more-card"]} ${style["more-card-new"]} `}
+      onClick={handlePurchaseClick}
+    >
+      <Link legacyBehavior href={""}>
         <a>
           <div className={style["more-card-header"]}>
             <div className={style["icon"]}>
@@ -84,7 +93,9 @@ const NFTCard = ({ nft }) => {
             </div>
           </div>
         </div>
-        <button className={style["theme-btn"]}>Purchase</button>
+        <button className={style["theme-btn"]} onClick={handlePurchaseClick}>
+          Purchase
+        </button>
       </div>
     </div>
   );

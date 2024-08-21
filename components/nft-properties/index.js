@@ -6,7 +6,7 @@ const NFTProperties = () => {
       <div className="d-flex w-100">
         <ul className={`border rounded-4 p-0 w-100 ${style["border-cus-clr"]}`}>
           <li className="d-flex p-3 ">
-            <span>Pool Information</span>
+            <h4>Pool Information</h4>
           </li>
           <li
             className={`d-flex justify-content-between align-items-center border-top p-3 ${style["border-cus-clr"]}`}

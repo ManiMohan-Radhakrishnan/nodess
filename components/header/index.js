@@ -12,6 +12,7 @@ import images from "../../utils/images.json";
 import { currencyFormat, roundDown } from "../../utils/common";
 
 import { IoWalletOutline } from "react-icons/io5";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 const Header = ({ bgImage = false }) => {
   const scrollPosition = useScrollPosition();
@@ -51,7 +52,7 @@ const Header = ({ bgImage = false }) => {
               />
             </Navbar.Brand>
             <>
-              <Nav className="d-flex me-0 ms-auto">
+              {/* <Nav className="d-flex me-0 ms-auto">
                 <Nav.Link
                   id="drop_outer"
                   role="button"
@@ -59,8 +60,10 @@ const Header = ({ bgImage = false }) => {
                   className="theme-btn"
                 >
                   Connect Wallet <IoWalletOutline />
+                 
                 </Nav.Link>
-              </Nav>
+              </Nav> */}
+              <ConnectButton />
             </>
           </Container>
         </Navbar>
@@ -68,64 +71,5 @@ const Header = ({ bgImage = false }) => {
     </>
   );
 };
-
-const UserComponent = ({ sref, user, onClick = () => {} }) => (
-  <div
-    // className={`header-user-details ${user?.og_user === true ? "og-user" : ""}`}
-    className={`header-user-details`}
-    onClick={onClick}
-    ref={sref}
-  >
-    <div className="user-image-block">
-      <Image
-        unoptimized={true}
-        height={60}
-        width={60}
-        className="user-image"
-        src={user?.avatar_url ? user?.avatar_url : images?.userJPG}
-        alt="user-icon"
-      />
-    </div>
-    <div className="user-name">
-      {currencyFormat(roundDown(user?.balance, user?.currency_name))}
-    </div>
-  </div>
-);
-
-const HeaderMobileMenuIcon = forwardRef(({ onClick }, ref) => {
-  return (
-    <div
-      className={`${style["menu-icon"]} ${style["header-hide-mobile"]}`}
-      ref={ref}
-      role="button"
-      onClick={(e) => {
-        e.preventDefault();
-        onClick(e);
-      }}
-    >
-      <CgMenuRight size={25} color={"#ec7c49"} />
-    </div>
-  );
-});
-
-HeaderMobileMenuIcon.displayName = "HeaderMobileMenuIcon";
-
-const HeaderMobileMenuCloseIcon = forwardRef(({ onClick }, ref) => {
-  return (
-    <div
-      className={style["close-icon"]}
-      ref={ref}
-      role="button"
-      onClick={(e) => {
-        e.preventDefault();
-        onClick(e);
-      }}
-    >
-      <VscChromeClose size={25} color={"white"} />
-    </div>
-  );
-});
-
-HeaderMobileMenuCloseIcon.displayName = "HeaderMobileMenuCloseIcon";
 
 export default Header;
