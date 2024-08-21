@@ -8,8 +8,6 @@ import { calculateTimeLeft } from "../../utils/common";
 
 import { getHideMenuStatus } from "../../redux/reducers/user_reducer";
 
-// import cardsvg from "../../images/card-svg.svg";
-
 const NFTBaseDetails = ({
   nft,
   putOnSalePop,

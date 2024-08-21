@@ -1,14 +1,8 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useRouter } from "next/router";
 import Image from "next/image";
-import { useDispatch, useSelector } from "react-redux";
 
-import { getHideMenuStatus } from "../../redux/reducers/user_reducer";
-import useWindowSize from "../../hooks/useWindowSize";
-
-import CarImages from "../../utils/images.json";
 import BannerImage from "../../images/banner-img.png";
 
 import style from "./style.module.scss";
