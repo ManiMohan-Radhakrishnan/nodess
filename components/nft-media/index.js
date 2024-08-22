@@ -1,18 +1,60 @@
 import style from "./style.module.scss";
-import { FaCircleChevronRight } from "react-icons/fa6";
 import { FiMinusCircle, FiPlusCircle } from "react-icons/fi";
 import { MdOutlineDiscount } from "react-icons/md";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import Image from "next/image";
+import { useState } from "react";
+import PromoCodeModal from "../promo-code-modal";
 
-const NFTMedia = ({ walletCollectionStatus, saleList, Balance }) => {
+const NFTMedia = ({
+  walletCollectionStatus,
+  saleList,
+  Balance,
+  // quantityPerOrder = 1,
+}) => {
+  const checkBalance = Balance?.formatted > saleList?.purchasePeriod?.salePrice;
   console.log("🚀 ~ NFTMedia ~ Balance:", Balance);
-  console.log(
-    "🚀 ~ NFTMedia ~ walletCollectionStatus:",
-    walletCollectionStatus
-  );
+  const [amount, setAmount] = useState(0);
+  const [value, setValue] = useState(0);
+  console.log("🚀 ~ value:", value);
+  console.log("🚀 ~ NFTMedia ~ formatted:", Balance?.formatted);
+  const InsufficientBalance = amount > Balance?.formatted;
+  console.log("🚀 ~ NFTMedia ~ InsufficientBalance:", InsufficientBalance);
 
+  const handleIncrease = () => {
+    setAmount((prevAmount) => parseFloat((prevAmount + 1).toFixed(4)));
+  };
+
+  const handleDecrease = () => {
+    setAmount((prevAmount) =>
+      parseFloat(Math.max(prevAmount - 1, 0).toFixed(4))
+    );
+  };
+
+  const handleChange = (event) => {
+    const value = event.target.value;
+    console.log("🚀 ~ handleChange ~ value:", value);
+    setValue(value);
+    if (/^\d*\.?\d*$/.test(value)) {
+      // Convert the input value to a number
+      const inputValue = parseFloat(value) || 0;
+      // Divide the input value by salePrice
+      const newAmount = (
+        inputValue * saleList?.purchasePeriod?.salePrice
+      ).toFixed(4);
+      setAmount(parseFloat(newAmount));
+    }
+  };
+
+  const [modalShow, setModalShow] = useState(false);
+
+  const handleClick = async () => {
+    setModalShow(true);
+  };
+  const handleClose = () => {
+    setModalShow(false);
+  };
   return (
     <>
       {walletCollectionStatus?.status === "connected" ? (
@@ -53,7 +95,10 @@ const NFTMedia = ({ walletCollectionStatus, saleList, Balance }) => {
                       ></div>
                     </div>
                     <div className={style["progress-text"]}>
-                      <span>24/3000 CARV Node sold</span>
+                      <span>
+                        24/{saleList?.saleAmount}{" "}
+                        {saleList?.saleToken?.tokenName} sold
+                      </span>
                       <span>25%</span>
                     </div>
                   </div>
@@ -86,35 +131,79 @@ const NFTMedia = ({ walletCollectionStatus, saleList, Balance }) => {
                   </div>
                 </div>
                 <div className={style["max-count-wrapper"]}>
-                  <FiMinusCircle color="#5e537f" />
-                  <div className={style["count"]}>
-                    <p>0</p>
+                  <div>
+                    <label htmlFor="amount">Amount:</label>
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                      {/* <FiMinusCircle color="#5e537f" onClick={handleDecrease} /> */}
+                      <input
+                        type="number"
+                        id="amount"
+                        name="amount"
+                        // value={value}
+                        onChange={handleChange}
+                        // min="0"
+                        // step="0.01"
+                        style={{ margin: "0 10px", textAlign: "center" }}
+                        placeholder="0"
+                      />
+                      {/* <FiPlusCircle color="#5e537f" onClick={handleIncrease} /> */}
+                    </div>
                   </div>
-                  <FiPlusCircle color="#5e537f" />
                   <span className={style["max-count-btn"]}>Max</span>
                 </div>
               </div>
               <div className={style["info-wrapper"]}>
                 <div className={style["info"]}>
-                  <p>Your Balance</p>
+                  <p>
+                    Your Balance{" "}
+                    <Image
+                      unoptimized={true}
+                      width="20"
+                      height="20"
+                      priority={true}
+                      loading="eager"
+                      placeholder={"blur"}
+                      blurDataURL={"/sample.gif"}
+                      alt="media_logo_check11"
+                      src={saleList?.paymentToken?.tokenImage}
+                      role="button"
+                    />{" "}
+                  </p>
                   <span>
-                    {Balance?.formatted} {Balance?.symbol}
+                    {Balance?.formatted} {Balance?.symbol}{" "}
                   </span>
                 </div>
                 <div className={style["info"]}>
                   <p className={style["text-white"]}>Total Price</p>
-                  <span className={style["text-blue"]}>0.8434 WETH</span>
+                  <span className={style["text-blue"]}>
+                    {amount} {saleList?.paymentToken?.tokenSymbol}
+                  </span>
                 </div>
               </div>
               <div className={style["promo-code-wrapper"]}>
-                <button>
+                <button onClick={handleClick}>
                   Use promo code
                   <MdOutlineDiscount color="#fff" />
                 </button>
               </div>
-              <button className={style["btn-balance"]}>
-                Insufficient WETH Balance
-              </button>
+
+              {!value ? (
+                <>
+                  <button className={style["btn-balance"]} disabled={true}>
+                    Enter Amount
+                  </button>
+                </>
+              ) : InsufficientBalance ? (
+                <>
+                  <button className={style["btn-balance"]} disabled={true}>
+                    Insufficient WETH Balance
+                  </button>
+                </>
+              ) : (
+                <button className={style["btn-balance"]} disabled={false}>
+                  Buy Now
+                </button>
+              )}
               <a href="/" className={style["link"]}>
                 Get more WETH or Wrap your ETH
                 <LiaExternalLinkAltSolid color="#fff" />
@@ -169,6 +258,11 @@ const NFTMedia = ({ walletCollectionStatus, saleList, Balance }) => {
           </section>
         </>
       )}
+      <>
+        {modalShow && (
+          <PromoCodeModal modalShow={modalShow} setModalShow={setModalShow} />
+        )}
+      </>
     </>
   );
 };

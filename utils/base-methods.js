@@ -171,6 +171,6 @@ export const getGametoken = () => {
   return baseAxios.get(`/external_auth`);
 };
 
-export const getNodessList = () => {
-  return baseAxios.get(`/projects-v2?company_id=8`);
+export const getNodessList = (page = 1, limit = 10) => {
+  return baseAxios.get(`/projects-v2?company_id=8&page=${page}&limit=${limit}`);
 };

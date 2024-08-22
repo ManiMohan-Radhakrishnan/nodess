@@ -11,6 +11,7 @@ import { useAccount } from "wagmi";
 import Image from "next/image";
 import { getBalance } from "@wagmi/core";
 import { config } from "../../utils/get-balance-config";
+import NFTPropertiesTwo from "../../components/nft-properties-two";
 
 const Details = () => {
   const router = useRouter();
@@ -39,7 +40,6 @@ const Details = () => {
   }, [saleId]);
 
   const handleNftDetails = async (saleId) => {
-    console.log("Fetching NFT details...");
     try {
       const response = await getNodessList(); // Replace with your actual API call
       const allSales = response?.data?.data[0]?.sales || [];
@@ -50,10 +50,8 @@ const Details = () => {
       );
 
       setSaleList(filteredSales[0]);
-
-      console.log("🚀 ~ handleNftDetails ~ filteredSales:", filteredSales);
     } catch (error) {
-      console.error("Error in fetching the NFT details", error);
+      // console.error("Error in fetching the NFT details", error);
     }
   };
 
@@ -119,11 +117,19 @@ const Details = () => {
             </div>
             <div className="row fit-to-height">
               <div className="col-12 col-lg-6">
-                <NFTProperties />
+                <NFTProperties
+                  saleList={saleList}
+                  walletCollectionStatus={walletCollectionStatus}
+                  Balance={balance}
+                />
               </div>
 
               <div className="col-12 col-lg-6">
-                <NFTProperties />
+                <NFTPropertiesTwo
+                  saleList={saleList}
+                  walletCollectionStatus={walletCollectionStatus}
+                  Balance={balance}
+                />
               </div>
             </div>
           </div>

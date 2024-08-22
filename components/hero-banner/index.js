@@ -54,7 +54,7 @@ const HeroBanner = ({
                   </div>
                   <div className={style["content-wrapper"]}>
                     <div className={style["inner-content-wrapper"]}>
-                      <h1>CARV</h1>
+                      <h1>NODESS</h1>
                       <div className={style["secial-icon-wrapper"]}>
                         <TbWorld color="#a69dbe" />
                         <RiTwitterXFill color="#a69dbe" />
@@ -66,7 +66,7 @@ const HeroBanner = ({
                         <RiTwitterXFill color="#a69dbe" />
                       </div>
                       <p>
-                        CARV is the largest modular data layer for gaming, AI,
+                        NODESS is the largest modular data layer for gaming, AI,
                         and ∞, pioneering a future where data generates value
                         for all. $20M from Temasek’s Vertex, ConsenSys
                         (Metamask), OKX, HashKey, and more.

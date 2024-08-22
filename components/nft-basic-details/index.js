@@ -5,6 +5,7 @@ import { FaCircleChevronRight } from "react-icons/fa6";
 import dayjs from "dayjs";
 import ToolTip from "../tooltip";
 import { BsFillQuestionCircleFill } from "react-icons/bs";
+import Image from "next/image";
 
 const NFTBaseDetails = ({ saleList }) => {
   return (
@@ -40,7 +41,18 @@ const NFTBaseDetails = ({ saleList }) => {
         </div>
         <div className={style["verifier-info-wrapper"]}>
           <div className={style["purchase-info-wrapper"]}>
-            <FaCircleChevronRight color="#fff" />
+            <Image
+              unoptimized={true}
+              width="40"
+              height="40"
+              priority={true}
+              loading="eager"
+              placeholder={"blur"}
+              blurDataURL={"/sample.gif"}
+              alt="media_logo_check11"
+              src={saleList?.saleToken?.tokenImage}
+              role="button"
+            />{" "}
             <div className={style["title-wrapper"]}>
               <p> Purchased</p>
               Start
