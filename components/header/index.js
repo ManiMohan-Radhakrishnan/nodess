@@ -1,17 +1,8 @@
-import dayjs from "dayjs";
-import Image from "next/image";
-import { forwardRef } from "react";
-import { Navbar, Nav, Container } from "react-bootstrap";
-import { CgMenuRight } from "react-icons/cg";
-import { VscChromeClose } from "react-icons/vsc";
+import { Navbar, Container } from "react-bootstrap";
 
 import useScrollPosition from "../../utils/scroll-position";
 import style from "./style.module.scss";
-import images from "../../utils/images.json";
 
-import { currencyFormat, roundDown } from "../../utils/common";
-
-import { IoWalletOutline } from "react-icons/io5";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 const Header = ({ bgImage = false }) => {

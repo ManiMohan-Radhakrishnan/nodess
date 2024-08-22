@@ -20,16 +20,13 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Script />
-      {router?.pathname !== "/nft-marketplace" &&
-        Object.keys(router.query).length === 0 && (
-          <div className="loader-container">
-            <div className="top-loader"></div>
-          </div>
-        )}
+      {Object.keys(router.query).length === 0 && (
+        <div className="loader-container">
+          <div className="top-loader"></div>
+        </div>
+      )}
       <div className="api-loader"> </div>
       <div className="whole-content background-set">
-        {/* <SSRProvider> */}
-        {/* {isOnline ? ( */}
         <RainbowKit>
           <Provider store={store}>
             <Component {...pageProps} />
@@ -46,12 +43,6 @@ function MyApp({ Component, pageProps }) {
             />
           </Provider>
         </RainbowKit>
-        {/* // ) : (
-        //   <>
-        //     <OnlineStatus />
-        //   </>
-        // )} */}
-        {/* </SSRProvider> */}
       </div>
     </>
   );
