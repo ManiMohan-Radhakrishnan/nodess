@@ -4,7 +4,7 @@ import style from "./style.module.scss";
 import { getNodessList } from "../../utils/base-methods";
 import NFTCardLoader from "../loaders/nft-card-loader";
 
-const RecentlySoldList = () => {
+const HomeNodessList = () => {
   const [saleList, setSaleList] = useState([]);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
@@ -103,4 +103,4 @@ const RecentlySoldList = () => {
   );
 };
 
-export default RecentlySoldList;
+export default HomeNodessList;
