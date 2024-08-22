@@ -9,16 +9,10 @@ import style from "./style.module.scss";
 import "swiper/css/pagination";
 import { TbWorld } from "react-icons/tb";
 import { RiTwitterXFill } from "react-icons/ri";
-import { FaRegQuestionCircle } from "react-icons/fa";
 import ToolTip from "../tooltip";
 import { BsFillQuestionCircleFill } from "react-icons/bs";
 
-const HeroBanner = ({
-  playPassRef,
-  tournamentRef,
-  ballNftDetails,
-  megaPassDetails,
-}) => {
+const HeroBanner = ({}) => {
   const swiperRef = useRef();
 
   return (

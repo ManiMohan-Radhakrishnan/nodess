@@ -10,21 +10,25 @@ const HomeNodessList = () => {
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
   const [loading, setLoading] = useState(false);
-  const [loadedIds, setLoadedIds] = useState(new Set()); // Track loaded IDs
+  const [loadedIds, setLoadedIds] = useState(new Set());
 
   useEffect(() => {
     handleNftDetails(page);
   }, [page]);
 
   const handleNftDetails = async (page) => {
-    if (loading) return; // Prevent multiple simultaneous requests
+    if (loading) return;
     setLoading(true);
     try {
       const response = await getNodessList(page);
       const allSales = response?.data?.data[0]?.sales || [];
+      console.log("Fetched Sales:", allSales);
+
       const filteredSales = allSales.filter(
         (sale) => !sale.isPrivate && !loadedIds.has(sale.saleId)
       );
+
+      console.log("Filtered Sales:", filteredSales);
 
       if (filteredSales.length > 0) {
         setSaleList((prev) => [...prev, ...filteredSales]);
@@ -35,7 +39,7 @@ const HomeNodessList = () => {
         });
         setHasMore(filteredSales.length > 0);
       } else {
-        setHasMore(false); // No more data
+        setHasMore(false);
       }
     } catch (error) {
       console.error("Error in fetching the NFT detail", error);
@@ -46,6 +50,7 @@ const HomeNodessList = () => {
 
   const loadMore = () => {
     if (hasMore && !loading) {
+      console.log("Loading more NFTs...");
       setPage((prev) => prev + 1);
     }
   };
@@ -73,7 +78,7 @@ const HomeNodessList = () => {
                 <div className="row">
                   {saleList?.map((nft) => (
                     <div
-                      key={nft.saleId} // Use unique key
+                      key={nft.saleId}
                       className="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-4"
                     >
                       <NFTCard nft={nft} imageUrl={"/sample.gif"} recentSold />

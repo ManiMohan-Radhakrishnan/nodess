@@ -13,14 +13,9 @@ const NFTMedia = ({
   Balance,
   // quantityPerOrder = 1,
 }) => {
-  const checkBalance = Balance?.formatted > saleList?.purchasePeriod?.salePrice;
-  console.log("🚀 ~ NFTMedia ~ Balance:", Balance);
   const [amount, setAmount] = useState(0);
   const [value, setValue] = useState(0);
-  console.log("🚀 ~ value:", value);
-  console.log("🚀 ~ NFTMedia ~ formatted:", Balance?.formatted);
   const InsufficientBalance = amount > Balance?.formatted;
-  console.log("🚀 ~ NFTMedia ~ InsufficientBalance:", InsufficientBalance);
 
   const handleIncrease = () => {
     setAmount((prevAmount) => parseFloat((prevAmount + 1).toFixed(4)));
@@ -34,12 +29,9 @@ const NFTMedia = ({
 
   const handleChange = (event) => {
     const value = event.target.value;
-    console.log("🚀 ~ handleChange ~ value:", value);
     setValue(value);
     if (/^\d*\.?\d*$/.test(value)) {
-      // Convert the input value to a number
       const inputValue = parseFloat(value) || 0;
-      // Divide the input value by salePrice
       const newAmount = (
         inputValue * saleList?.purchasePeriod?.salePrice
       ).toFixed(4);
@@ -52,9 +44,7 @@ const NFTMedia = ({
   const handleClick = async () => {
     setModalShow(true);
   };
-  const handleClose = () => {
-    setModalShow(false);
-  };
+
   return (
     <>
       {walletCollectionStatus?.status === "connected" ? (
