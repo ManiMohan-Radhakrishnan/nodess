@@ -1264,12 +1264,6 @@ export const removeZeros = (num) => {
   return num.replace(/^0+/, "");
 };
 
-export const navigateToExternalLink = (url, target = "_self") => {
-  const hideMenus = store.getState()?.user?.hideMenuStatus;
-  let modifiedUrl = hideMenus ? `${url}&hideMenus=true` : url;
-  window.open(modifiedUrl, target);
-};
-
 export const openWindowBlank = (url) => {
   window.open(url, "_blank");
 };

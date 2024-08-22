@@ -1,7 +1,6 @@
 import axios from "axios";
 import { getCookies, removeCookies } from "../utils/cookies";
 import { store } from "./../redux/store";
-import { user_logout_thunk } from "./../redux/thunk/user_thunk";
 
 const baseAxios = axios.create({
   baseURL: process.env.NEXT_PUBLIC_BASE_SERVER_URL1,
