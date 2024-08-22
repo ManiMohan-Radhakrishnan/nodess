@@ -2,9 +2,7 @@ import { useEffect, useState } from "react";
 import NFTCard from "../nft-card";
 import style from "./style.module.scss";
 import { getNodessList } from "../../utils/base-methods";
-import NFTListLoader from "../loaders/nft-list-loader";
 import NFTCardLoader from "../loaders/nft-card-loader";
-import GradientCircularLoader from "../loaders/gradient-circular-loader";
 
 const RecentlySoldList = () => {
   const [saleList, setSaleList] = useState([]);

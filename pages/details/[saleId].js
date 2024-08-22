@@ -12,6 +12,10 @@ import Image from "next/image";
 import { getBalance } from "@wagmi/core";
 import { config } from "../../utils/get-balance-config";
 import NFTPropertiesTwo from "../../components/nft-properties-two";
+import {
+  NFTLoader,
+  WebViewLoader,
+} from "../../components/nft-basic-details/content-loader";
 
 const Details = () => {
   const router = useRouter();
@@ -19,6 +23,8 @@ const Details = () => {
 
   const [saleList, setSaleList] = useState([]);
   const [balance, setBalance] = useState();
+
+  const [loading, setLoading] = useState(false);
 
   const walletCollectionStatus = useAccount();
 
@@ -41,6 +47,8 @@ const Details = () => {
 
   const handleNftDetails = async (saleId) => {
     try {
+      setLoading(true);
+
       const response = await getNodessList(); // Replace with your actual API call
       const allSales = response?.data?.data[0]?.sales || [];
 
@@ -50,7 +58,9 @@ const Details = () => {
       );
 
       setSaleList(filteredSales[0]);
+      setLoading(false);
     } catch (error) {
+      setLoading(false);
       // console.error("Error in fetching the NFT details", error);
     }
   };
@@ -60,81 +70,87 @@ const Details = () => {
   return (
     <>
       <Header />
-      <section className="detail-page-content background-set">
-        <div className="bid_section_wrapper">
-          <div className="container-fluid">
-            <div className="sec-title">
-              {" "}
-              <h1>
+      {!loading ? (
+        <section className="detail-page-content background-set">
+          <div className="bid_section_wrapper">
+            <div className="container-fluid">
+              <div className="sec-title">
                 {" "}
-                <Image
-                  unoptimized={true}
-                  width="40"
-                  height="40"
-                  priority={true}
-                  loading="eager"
-                  placeholder={"blur"}
-                  blurDataURL={"/sample.gif"}
-                  alt="media_logo_check11"
-                  src={saleList?.saleToken?.tokenImage}
-                  role="button"
-                />{" "}
-                <Image
-                  unoptimized={true}
-                  width="40"
-                  height="40"
-                  priority={true}
-                  loading="eager"
-                  placeholder={"blur"}
-                  blurDataURL={"/sample.gif"}
-                  alt="media_logo_check11"
-                  src={
-                    "https://verifier.carv.io/images/icons/networks/42161.svg"
-                  }
-                  role="button"
-                />
-                {saleList?.saleTitle}
-              </h1>
-            </div>
-            <div
-              className={`row ${
-                walletCollectionStatus?.status === "connected"
-                  ? "fit-to-height"
-                  : ""
-              }`}
-            >
-              <div className="col-12 col-lg-7">
-                <NFTMedia
-                  saleList={saleList}
-                  walletCollectionStatus={walletCollectionStatus}
-                  Balance={balance}
-                />
+                <h1>
+                  {" "}
+                  <Image
+                    unoptimized={true}
+                    width="40"
+                    height="40"
+                    priority={true}
+                    loading="eager"
+                    placeholder={"blur"}
+                    blurDataURL={"/sample.gif"}
+                    alt="media_logo_check11"
+                    src={saleList?.saleToken?.tokenImage}
+                    role="button"
+                  />{" "}
+                  <Image
+                    unoptimized={true}
+                    width="40"
+                    height="40"
+                    priority={true}
+                    loading="eager"
+                    placeholder={"blur"}
+                    blurDataURL={"/sample.gif"}
+                    alt="media_logo_check11"
+                    src={
+                      "https://verifier.carv.io/images/icons/networks/42161.svg"
+                    }
+                    role="button"
+                  />
+                  {saleList?.saleTitle}
+                </h1>
               </div>
+              <div
+                className={`row ${
+                  walletCollectionStatus?.status === "connected"
+                    ? "fit-to-height"
+                    : ""
+                }`}
+              >
+                <div className="col-12 col-lg-7">
+                  <NFTMedia
+                    saleList={saleList}
+                    walletCollectionStatus={walletCollectionStatus}
+                    Balance={balance}
+                  />
+                </div>
 
-              <div className="col-12 col-lg-5">
-                <NFTBaseDetails saleList={saleList} />
+                <div className="col-12 col-lg-5">
+                  <NFTBaseDetails saleList={saleList} />
+                </div>
               </div>
-            </div>
-            <div className="row fit-to-height">
-              <div className="col-12 col-lg-6">
-                <NFTProperties
-                  saleList={saleList}
-                  walletCollectionStatus={walletCollectionStatus}
-                  Balance={balance}
-                />
-              </div>
+              <div className="row fit-to-height">
+                <div className="col-12 col-lg-6">
+                  <NFTProperties
+                    saleList={saleList}
+                    walletCollectionStatus={walletCollectionStatus}
+                    Balance={balance}
+                  />
+                </div>
 
-              <div className="col-12 col-lg-6">
-                <NFTPropertiesTwo
-                  saleList={saleList}
-                  walletCollectionStatus={walletCollectionStatus}
-                  Balance={balance}
-                />
+                <div className="col-12 col-lg-6">
+                  <NFTPropertiesTwo
+                    saleList={saleList}
+                    walletCollectionStatus={walletCollectionStatus}
+                    Balance={balance}
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : (
+        <>
+          <NFTLoader />
+        </>
+      )}
     </>
   );
 };

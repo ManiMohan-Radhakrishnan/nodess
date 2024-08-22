@@ -41,7 +41,7 @@ const Header = ({ bgImage = false }) => {
               role="button"
               className={style["head-title"]}
             >
-              <Image
+              {/* <Image
                 unoptimized={true}
                 height={30}
                 width={30}
@@ -49,8 +49,18 @@ const Header = ({ bgImage = false }) => {
                 alt="jumpTradeLogo"
                 className={style["logoImage"]}
                 priority={true}
-              />
+              /> */}
+              <div
+                className="sub-head-title header-powereby "
+                role="button"
+                onClick={() => {
+                  window.open(process.env.NEXT_PUBLIC_WEBSITE_URL, "_self");
+                }}
+              >
+                <h3>NODESS</h3>
+              </div>
             </Navbar.Brand>
+
             <>
               {/* <Nav className="d-flex me-0 ms-auto">
                 <Nav.Link

@@ -316,7 +316,8 @@ input::-webkit-inner-spin-button {
   .top-loader {
     opacity: 0.75;
     position: fixed;
-    background: url("https://cdn.guardianlink.io/product-hotspot/images/jtcdn/new-loader.gif");
+    // background: url("https://cdn.guardianlink.io/product-hotspot/images/jtcdn/new-loader.gif");
+    background: url("https://cdn.guardianlink.io/product-hotspot/images/jump/jump-trade/sample.gif");
     height: 10rem;
     width: 100%;
     max-width: 20rem;
@@ -1177,7 +1178,7 @@ input::-webkit-inner-spin-button {
 }
 
 .header-powereby {
-  color: #88fa4e !important;
+  color: #f9f9f9 !important;
 }
 
 // Header Styles

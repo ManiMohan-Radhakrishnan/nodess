@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import style from "./style.module.scss";
 import { useRouter } from "next/router";
+import CoinImage from "../../images/coin.png";
 
 const NFTCard = ({ nft }) => {
   const router = useRouter();
@@ -30,9 +31,7 @@ const NFTCard = ({ nft }) => {
                 placeholder={"blur"}
                 blurDataURL={"/sample.gif"}
                 alt="media_logo_check11"
-                src={
-                  "https://cdn.guardianlink.io/product-hotspot/images/rewardicon.png"
-                }
+                src={CoinImage}
                 role="button"
               />
             </div>

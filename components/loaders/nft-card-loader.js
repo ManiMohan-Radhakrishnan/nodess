@@ -5,26 +5,26 @@ const NFTCardLoader = (props) => {
     <>
       <>
         <ContentLoader
-          viewBox="0 6 2000 890"
+          viewBox="0 6 2000 1700"
           speed={1}
           backgroundColor="#4d4a5f"
           foregroundColor="#212031"
           {...props}
         >
-          <rect x="5" y="5" rx="10" ry="10" width="25%" height="600" />
-          <rect x="34.25%" y="5" rx="10" ry="10" width="25%" height="600" />
-          <rect x="68.25%" y="5" rx="10" ry="10" width="25%" height="600" />
-        </ContentLoader>
-        <ContentLoader
-          viewBox="0 6 2000 910"
-          speed={1}
-          backgroundColor="#4d4a5f"
-          foregroundColor="#212031"
-          {...props}
-        >
-          <rect x="5" y="5" rx="10" ry="10" width="25%" height="600" />
-          <rect x="34.25%" y="5" rx="10" ry="10" width="25%" height="600" />
-          <rect x="68.25%" y="5" rx="10" ry="10" width="25%" height="600" />
+          <rect x="40" y="20" rx="20" ry="20" width="22%" height="500" />
+          <rect x="26.50%" y="20" rx="20" ry="20" width="22%" height="500" />
+          <rect x="51.25%" y="20" rx="20" ry="20" width="22%" height="500" />
+          <rect x="76.25%" y="20" rx="20" ry="20" width="22%" height="500" />
+
+          <rect x="40" y="555" rx="20" ry="20" width="22%" height="500" />
+          <rect x="26.50%" y="555" rx="20" ry="20" width="22%" height="500" />
+          <rect x="51.25%" y="555" rx="20" ry="20" width="22%" height="500" />
+          <rect x="76.25%" y="555" rx="20" ry="20" width="22%" height="500" />
+
+          <rect x="40" y="1095" rx="20" ry="20" width="22%" height="500" />
+          <rect x="26.50%" y="1095" rx="20" ry="20" width="22%" height="500" />
+          <rect x="51.25%" y="1095" rx="20" ry="20" width="22%" height="500" />
+          <rect x="76.25%" y="1095" rx="20" ry="20" width="22%" height="500" />
         </ContentLoader>
       </>
     </>

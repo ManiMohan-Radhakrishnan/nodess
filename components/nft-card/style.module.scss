@@ -135,7 +135,9 @@
           height: 0.35rem;
           border-radius: 0.5rem;
           .cus-progress-bar {
-            background-color: #ec7c49;
+            background-color: transparent
+              linear-gradient(85deg, #2684d9 0%, #ec7c49 100%) 0% 0% no-repeat
+              padding-box;
             border-radius: 0.5rem;
           }
         }
