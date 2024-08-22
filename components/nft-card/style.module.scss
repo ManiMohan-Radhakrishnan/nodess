@@ -23,8 +23,10 @@
     flex-direction: column;
     gap: 3rem;
     &:hover {
-      transform: translateY(-15px);
-      transition: 0.3s;
+      // transform: translateY(-15px);
+      // transition: 0.3s;
+      box-shadow: 5px 6px 6px 2px #080808;
+      transform: scale(1.1);
     }
   }
 
