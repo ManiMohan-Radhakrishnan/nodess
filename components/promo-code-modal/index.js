@@ -2,7 +2,6 @@ import { useState } from "react";
 import style from "./style.module.scss";
 import { Modal, Table } from "react-bootstrap";
 import { BiX } from "react-icons/bi";
-
 const PromoCodeModal = ({ modalShow, setModalShow }) => {
   const handleClose = () => {
     setModalShow(false);
@@ -10,7 +9,7 @@ const PromoCodeModal = ({ modalShow, setModalShow }) => {
   return (
     <>
       {" "}
-      <Modal size="sm" centered show={modalShow} className={"history-modal"}>
+      <Modal size="md" centered show={modalShow} className={"history-modal"}>
         <Modal.Header className="bg-dark p-0">
           <Modal.Title className="flex-fill">
             <div className={"modal-bid-history-title-content"}>
@@ -19,7 +18,7 @@ const PromoCodeModal = ({ modalShow, setModalShow }) => {
                 <BiX
                   role="button"
                   style={{ color: "#fff" }}
-                  size={25}
+                  size={36}
                   onClick={handleClose}
                 />
               </div>
@@ -27,9 +26,20 @@ const PromoCodeModal = ({ modalShow, setModalShow }) => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Table responsive="lg" className={`mb-0 ${"history-table-expand"}`}>
-            sss
-          </Table>
+          <div className={style["modal-content-cus"]}>
+            <p>
+              Referral code (wallet address format) will not be automatically
+              applied. Rebate will only be approved and airdropped by XX upon
+              confirmation referrer has purchased a node.
+            </p>
+            <div className={style["input-wrapper"]}>
+              <input type="text" />
+            </div>
+            <div className={style["button-wrapper"]}>
+              <button className={style["btn-primary"]}>Cancel</button>
+              <button className={style["btn-secondary"]}>Apply</button>
+            </div>
+          </div>
         </Modal.Body>
       </Modal>
     </>

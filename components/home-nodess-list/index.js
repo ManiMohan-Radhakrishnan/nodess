@@ -3,6 +3,7 @@ import NFTCard from "../nft-card";
 import style from "./style.module.scss";
 import { getNodessList } from "../../utils/base-methods";
 import NFTCardLoader from "../loaders/nft-card-loader";
+import BasicLoader from "../loaders/basic-loader";
 
 const HomeNodessList = () => {
   const [saleList, setSaleList] = useState([]);

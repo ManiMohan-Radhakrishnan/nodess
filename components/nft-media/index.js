@@ -132,9 +132,8 @@ const NFTMedia = ({
                 </div>
                 <div className={style["max-count-wrapper"]}>
                   <div>
-                    <label htmlFor="amount">Amount:</label>
                     <div style={{ display: "flex", alignItems: "center" }}>
-                      {/* <FiMinusCircle color="#5e537f" onClick={handleDecrease} /> */}
+                      <FiMinusCircle color="#5e537f" onClick={handleDecrease} />
                       <input
                         type="number"
                         id="amount"
@@ -146,7 +145,7 @@ const NFTMedia = ({
                         style={{ margin: "0 10px", textAlign: "center" }}
                         placeholder="0"
                       />
-                      {/* <FiPlusCircle color="#5e537f" onClick={handleIncrease} /> */}
+                      <FiPlusCircle color="#5e537f" onClick={handleIncrease} />
                     </div>
                   </div>
                   <span className={style["max-count-btn"]}>Max</span>
@@ -196,7 +195,7 @@ const NFTMedia = ({
               ) : InsufficientBalance ? (
                 <>
                   <button className={style["btn-balance"]} disabled={true}>
-                    Insufficient WETH Balance
+                    Insufficient Balance
                   </button>
                 </>
               ) : (

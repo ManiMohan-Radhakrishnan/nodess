@@ -132,7 +132,22 @@
         -webkit-box-align: center;
         align-items: center;
         svg {
-          font-size: 2rem;
+          font-size: 2.5rem;
+        }
+        input {
+          background: transparent;
+          border: none;
+          font-size: 2rem !important;
+          max-width: 13rem;
+          &:focus,
+          &:hover,
+          &:active {
+            outline: none;
+            border: none;
+          }
+          &::placeholder {
+            color: #5e537f;
+          }
         }
         .count {
           p {
@@ -200,8 +215,11 @@
         gap: 0.25rem;
         flex-shrink: 0;
         border-radius: 1.5rem;
-        background: #a984fdcc;
-        border: 1px solid #a984fdcc;
+        // background: #a984fdcc;
+        // border: 1px solid #a984fdcc;
+        background: transparent linear-gradient(85deg, #2684d9 0%, #ec7c49 100%)
+          0% 0% no-repeat padding-box;
+        border: solid 1px transparent;
       }
       svg {
         font-size: 1.3rem;
@@ -222,14 +240,21 @@
       gap: 0.25rem;
       flex-shrink: 0;
       border-radius: 1.5rem;
-      background: #a984fdcc;
-      border: 1px solid #a984fdcc;
+      // background: #a984fdcc;
+      // border: 1px solid #a984fdcc;
+      background: transparent linear-gradient(85deg, #2684d9 0%, #ec7c49 100%)
+        0% 0% no-repeat padding-box;
+      border: solid 1px transparent;
       &.diabled,
       &:disabled {
-        background: rgb(68, 58, 77);
-        border-color: rgb(60, 55, 66);
+        // background: rgb(68, 58, 77);
+        // border-color: rgb(60, 55, 66);
+        background: transparent linear-gradient(85deg, #2684d9 0%, #ec7c49 100%)
+          0% 0% no-repeat padding-box;
+        border: solid 1px transparent;
+
         box-shadow: none;
-        color: rgba(119, 119, 119, 0.5);
+        color: rgba(242, 239, 239, 0.5);
         cursor: not-allowed;
       }
     }

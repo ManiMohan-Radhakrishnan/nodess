@@ -10,6 +10,8 @@ import "swiper/css/pagination";
 import { TbWorld } from "react-icons/tb";
 import { RiTwitterXFill } from "react-icons/ri";
 import { FaRegQuestionCircle } from "react-icons/fa";
+import ToolTip from "../tooltip";
+import { BsFillQuestionCircleFill } from "react-icons/bs";
 
 const HeroBanner = ({
   playPassRef,
@@ -74,7 +76,22 @@ const HeroBanner = ({
                       <div className={style["network-wrapper"]}>
                         <div className={style["icon-wrapper"]}>
                           <p>Network</p>
-                          <FaRegQuestionCircle color="#a69dbe" />
+                          <ToolTip
+                            icon={
+                              <BsFillQuestionCircleFill
+                                color={"#a984fdcc"}
+                                size={14}
+                                className="mb-1 check-icon"
+                              />
+                            }
+                            content={
+                              <>
+                                If the bid is not accepted before the shown time
+                                in the countdown, the bid will expire. <br />
+                              </>
+                            }
+                            placement="top"
+                          />
                         </div>
                         <Image
                           unoptimized={true}

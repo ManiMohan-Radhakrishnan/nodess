@@ -75,37 +75,39 @@ const Details = () => {
           <div className="bid_section_wrapper">
             <div className="container-fluid">
               <div className="sec-title">
-                {" "}
-                <h1>
-                  {" "}
-                  <Image
-                    unoptimized={true}
-                    width="40"
-                    height="40"
-                    priority={true}
-                    loading="eager"
-                    placeholder={"blur"}
-                    blurDataURL={"/sample.gif"}
-                    alt="media_logo_check11"
-                    src={saleList?.saleToken?.tokenImage}
-                    role="button"
-                  />{" "}
-                  <Image
-                    unoptimized={true}
-                    width="40"
-                    height="40"
-                    priority={true}
-                    loading="eager"
-                    placeholder={"blur"}
-                    blurDataURL={"/sample.gif"}
-                    alt="media_logo_check11"
-                    src={
-                      "https://verifier.carv.io/images/icons/networks/42161.svg"
-                    }
-                    role="button"
-                  />
-                  {saleList?.saleTitle}
-                </h1>
+                <div className="title">
+                  <div className="icon">
+                    <Image
+                      unoptimized={true}
+                      width="40"
+                      height="40"
+                      priority={true}
+                      loading="eager"
+                      placeholder={"blur"}
+                      blurDataURL={"/sample.gif"}
+                      alt="media_logo_check11"
+                      src={saleList?.saleToken?.tokenImage}
+                      role="button"
+                    />
+                    <Image
+                      unoptimized={true}
+                      width="40"
+                      height="40"
+                      priority={true}
+                      loading="eager"
+                      placeholder={"blur"}
+                      blurDataURL={"/sample.gif"}
+                      alt="media_logo_check11"
+                      className="small-icon"
+                      src={
+                        "https://verifier.carv.io/images/icons/networks/42161.svg"
+                      }
+                      role="button"
+                    />
+                  </div>
+
+                  <h1>{saleList?.saleTitle}</h1>
+                </div>
               </div>
               <div
                 className={`row ${
