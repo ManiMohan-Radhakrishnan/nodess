@@ -3,7 +3,7 @@ import { getCookies, removeCookies } from "../utils/cookies";
 import { store } from "./../redux/store";
 
 const baseAxios = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_BASE_SERVER_URL1,
+  baseURL: process.env.NEXT_PUBLIC_API_URL,
 });
 
 // Todo: Figure out how to use document obj only in client side.
