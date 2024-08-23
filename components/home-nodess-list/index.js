@@ -90,7 +90,7 @@ const HomeNodessList = () => {
                       key={nft.saleId}
                       className="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-4"
                     >
-                      <NFTCard nft={nft} imageUrl={"/sample.gif"} recentSold />
+                      <NFTCard nft={nft} imageUrl={"/sample.gif"} />
                     </div>
                   ))}
                 </div>

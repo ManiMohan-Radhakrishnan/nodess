@@ -10,7 +10,7 @@ import PromoCodeModal from "../promo-code-modal";
 const NFTMedia = ({
   walletCollectionStatus,
   saleList,
-  Balance,
+  Balance = 0,
   // quantityPerOrder = 1,
 }) => {
   const [amount, setAmount] = useState(0);
@@ -43,6 +43,12 @@ const NFTMedia = ({
 
   const handleClick = async () => {
     setModalShow(true);
+  };
+
+  const handleClearData = async () => {
+    console.log("first");
+    setAmount(0);
+    setValue(0);
   };
 
   return (
@@ -128,7 +134,7 @@ const NFTMedia = ({
                         type="number"
                         id="amount"
                         name="amount"
-                        // value={value}
+                        value={value}
                         onChange={handleChange}
                         // min="0"
                         // step="0.01"
@@ -138,7 +144,12 @@ const NFTMedia = ({
                       <FiPlusCircle color="#5e537f" onClick={handleIncrease} />
                     </div>
                   </div>
-                  <span className={style["max-count-btn"]}>Max</span>
+                  <span
+                    className={style["max-count-btn"]}
+                    onClick={handleClearData}
+                  >
+                    Max
+                  </span>
                 </div>
               </div>
               <div className={style["info-wrapper"]}>
@@ -189,7 +200,10 @@ const NFTMedia = ({
                   </button>
                 </>
               ) : (
-                <button className={style["btn-balance"]} disabled={false}>
+                <button
+                  className={style["btn-balance"]}
+                  disabled={Balance?.formatted <= 0}
+                >
                   Buy Now
                 </button>
               )}
