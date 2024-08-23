@@ -26,7 +26,6 @@ const HomeNodessList = () => {
       const filteredSales = allSales.filter(
         (sale) => !sale.isPrivate && !loadedIds.has(sale.saleId)
       );
-      console.log("🚀 ~ handleNftDetails ~ filteredSales:", filteredSales);
 
       if (filteredSales.length > 0) {
         setSaleList((prev) => {

@@ -5,15 +5,16 @@ import {
   darkTheme,
   getDefaultConfig,
 } from "@rainbow-me/rainbowkit";
-import { mainnet } from "wagmi/chains";
+import { holesky, mainnet } from "wagmi/chains";
 import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import "@rainbow-me/rainbowkit/styles.css";
 const config = getDefaultConfig({
   appName: "RainbowKit demo",
   projectId: "YOUR_PROJECT_ID",
-  chains: [mainnet],
+  chains: [mainnet, holesky],
   transports: {
     [mainnet.id]: http(),
+    [holesky.id]: http(),
   },
 });
 const queryClient = new QueryClient();

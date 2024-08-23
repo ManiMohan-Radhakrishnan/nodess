@@ -7,7 +7,7 @@ import NFTProperties from "../../components/nft-properties";
 import Header from "../../components/header";
 import { getNodessList } from "../../utils/base-methods";
 import { useRouter } from "next/router";
-import { useAccount } from "wagmi";
+import { useAccount, useConfig } from "wagmi";
 import Image from "next/image";
 import { getBalance } from "@wagmi/core";
 import { config } from "../../utils/get-balance-config";
@@ -28,17 +28,22 @@ const Details = () => {
 
   const walletCollectionStatus = useAccount();
 
+  const config = useConfig();
+
   const promise = getBalance(config, {
     address: walletCollectionStatus?.address,
   });
 
-  promise
-    .then((balance) => {
-      setBalance(balance);
-    })
-    .catch((error) => {
-      console.error(error);
-    });
+  useEffect(() => {
+    promise
+      .then((balance) => {
+        setBalance(balance);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
   useEffect(() => {
     if (saleId) {
       handleNftDetails(saleId);
