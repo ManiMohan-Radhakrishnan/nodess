@@ -1,6 +1,7 @@
 import HeroBanner from "../components/hero-banner";
 import HomeNodessList from "../components/home-nodess-list";
 import Header from "../components/header";
+import Footer from "../components/footer";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
         <HeroBanner />
         <HomeNodessList />
       </main>
+      {/* <Footer /> */}
     </>
   );
 }

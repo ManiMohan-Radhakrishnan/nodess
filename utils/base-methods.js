@@ -14,6 +14,6 @@ import baseAxios from "./axios-base-utils";
 //   });
 // };
 
-export const getNodessList = (page = 1, limit = 10) => {
+export const getNodessList = (page = 1, limit = 2) => {
   return baseAxios.get(`/projects-v2?company_id=8&page=${page}&limit=${limit}`);
 };

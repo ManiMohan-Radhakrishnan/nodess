@@ -3,7 +3,6 @@ import NFTCard from "../nft-card";
 import style from "./style.module.scss";
 import { getNodessList } from "../../utils/base-methods";
 import NFTCardLoader from "../loaders/nft-card-loader";
-import BasicLoader from "../loaders/basic-loader";
 
 const HomeNodessList = () => {
   const [saleList, setSaleList] = useState([]);
@@ -22,21 +21,30 @@ const HomeNodessList = () => {
     try {
       const response = await getNodessList(page);
       const allSales = response?.data?.data[0]?.sales || [];
-      console.log("Fetched Sales:", allSales);
 
+      // Filter out private sales and those already loaded
       const filteredSales = allSales.filter(
         (sale) => !sale.isPrivate && !loadedIds.has(sale.saleId)
       );
-
-      console.log("Filtered Sales:", filteredSales);
+      console.log("🚀 ~ handleNftDetails ~ filteredSales:", filteredSales);
 
       if (filteredSales.length > 0) {
-        setSaleList((prev) => [...prev, ...filteredSales]);
+        setSaleList((prev) => {
+          const uniqueSales = [
+            ...prev,
+            ...filteredSales.filter(
+              (sale) => !prev.some((item) => item.saleId === sale.saleId)
+            ),
+          ];
+          return uniqueSales;
+        });
+
         setLoadedIds((prev) => {
           const newIds = new Set(prev);
           filteredSales.forEach((sale) => newIds.add(sale.saleId));
           return newIds;
         });
+
         setHasMore(filteredSales.length > 0);
       } else {
         setHasMore(false);
@@ -50,10 +58,11 @@ const HomeNodessList = () => {
 
   const loadMore = () => {
     if (hasMore && !loading) {
-      console.log("Loading more NFTs...");
       setPage((prev) => prev + 1);
     }
   };
+
+  console.log(hasMore, "hasMore");
 
   return (
     <>
@@ -88,7 +97,7 @@ const HomeNodessList = () => {
                 {hasMore && (
                   <div className="text-center mt-4">
                     <button
-                      className="btn btn-primary"
+                      className={`btn btn-primary ${style["theme-btn"]}`}
                       onClick={loadMore}
                       disabled={loading}
                     >

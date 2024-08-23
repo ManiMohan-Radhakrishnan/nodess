@@ -248,3 +248,33 @@ button.load_more {
   font-family: $proxima-nova;
   font-weight: 400;
 }
+
+.theme-btn {
+  color: #fff;
+  // display: block;
+  margin: 0 !important;
+  padding: 0.75rem 1.5rem;
+  transition: 0.3s;
+  position: relative;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  border: solid 0.1rem #2684d9;
+  background: transparent;
+
+  // background: transparent linear-gradient(85deg, #2684d9 0%, #ec7c49 100%) 0% 0%
+  //   no-repeat padding-box;
+  // border: solid 1px transparent;
+  border-radius: 50rem;
+  font-family: "proxima-nova" !important;
+  font-weight: 600;
+  width: 20%;
+  // color: #de6f00;
+  &:hover,
+  &:focus,
+  &:active {
+    background: transparent linear-gradient(85deg, #2684d9 0%, #ec7c49 100%) 0%
+      0% no-repeat padding-box;
+    border: solid 1px transparent;
+    // background: transparent;
+  }
+}
