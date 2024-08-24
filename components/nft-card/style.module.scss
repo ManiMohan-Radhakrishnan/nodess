@@ -1,382 +1,5 @@
 @import "../../styles/common";
 
-.more-card {
-  margin: 0 !important;
-  min-width: 100%;
-  max-width: 100%;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  text-decoration: none;
-  color: #000;
-  &.more-card-new {
-    padding: 1rem;
-    position: relative;
-    border-radius: 1.5rem;
-    transition: 0.5s;
-    background: #1d1e23f7;
-    height: calc(100% - 0rem);
-    margin: 0;
-    box-shadow: 0.2rem 0.2rem 1.1rem rgba(14, 14, 28, 0.5215686275),
-      -0.2rem -0.2rem 1.1rem rgba(53, 53, 69, 0.5215686275);
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    &:hover {
-      // transform: translateY(-15px);
-      // transition: 0.3s;
-      box-shadow: 5px 6px 6px 2px #080808;
-      transform: scale(1.1);
-    }
-  }
-
-  &:hover {
-    color: #000;
-  }
-
-  .nft-like-btn {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    background-color: rgba(0, 0, 0, 0.39);
-    padding: 0.6rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.719);
-    }
-  }
-
-  .nft-type-badge {
-    color: #95ff8d;
-    font-size: 0.7rem;
-    border-radius: 0.3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 1.5rem;
-    max-width: 3.5rem;
-    min-width: 3.5rem;
-    padding: 0;
-    box-shadow: none;
-    z-index: 2;
-    background: transparent;
-    border: 0.05rem solid #95ff8d;
-    font-family: $proxima-nova;
-    font-weight: 600;
-  }
-
-  &:last-child {
-    margin-right: 0;
-  }
-
-  overflow: hidden;
-
-  .more-card-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    .icon {
-      border-radius: 8px;
-      width: 5rem;
-      height: 5rem;
-      display: flex;
-      -webkit-box-pack: center;
-      justify-content: center;
-      -webkit-box-align: center;
-      align-items: center;
-      img {
-        width: 50%;
-        height: 50%;
-        object-fit: contain;
-        margin: 0;
-        border-radius: 50%;
-      }
-    }
-    .more-card-nft-name_wrapper {
-      width: calc(100% - 6rem);
-      .more-card-nft-name {
-        margin: 0;
-        font-size: 1.3rem;
-        font-family: $proxima-nova;
-        font-weight: 600;
-        display: block;
-        @include text-ellipsis;
-        color: #ffffff;
-      }
-    }
-  }
-
-  .more-card-content {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    .content-card {
-      display: flex;
-      flex-direction: column;
-      gap: 1.75rem;
-      ul {
-        padding: 0;
-        margin: 0;
-        list-style-position: inside;
-        display: flex;
-        flex-direction: column;
-        gap: 1.25rem;
-        li {
-          display: flex;
-          justify-content: space-between;
-          span {
-            font-size: 1rem;
-            line-height: normal;
-            color: rgba(255, 255, 255, 0.8);
-          }
-        }
-      }
-      .cus-progress-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        .cus-progress {
-          height: 0.35rem;
-          border-radius: 0.5rem;
-          .cus-progress-bar {
-            background-color: transparent
-              linear-gradient(85deg, #2684d9 0%, #ec7c49 100%) 0% 0% no-repeat
-              padding-box;
-            border-radius: 0.5rem;
-          }
-        }
-        .progress-text {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          span {
-            font-size: 1rem;
-            line-height: normal;
-            color: rgba(255, 255, 255, 0.8);
-          }
-        }
-      }
-    }
-
-    .theme-btn {
-      color: #fff;
-      display: block;
-      margin: 0 !important;
-      padding: 0.75rem 1.5rem;
-      transition: 0.3s;
-      position: relative;
-      text-transform: capitalize;
-      font-size: 1.2rem;
-      // border: solid 0.1rem #2684d9;
-      // background: transparent;
-
-      background: transparent linear-gradient(85deg, #2684d9 0%, #ec7c49 100%)
-        0% 0% no-repeat padding-box;
-      border: solid 1px transparent;
-      border-radius: 50rem;
-      font-family: "proxima-nova" !important;
-      font-weight: 600;
-      width: 100%;
-      // color: #de6f00;
-      &:hover,
-      &:focus,
-      &:active {
-        // background: transparent linear-gradient(85deg, #ef9f5e 0%, #ec7c49 100%)
-        //   0% 0% no-repeat padding-box;
-        border: solid 0.1rem #2684d9;
-        background: transparent;
-      }
-    }
-  }
-
-  // img {
-  //   min-width: 100%;
-  //   width: 100%;
-  //   // max-height: 26rem;
-  //   object-fit: contain;
-  //   margin-bottom: 1rem;
-  //   object-position: top;
-  //   border-radius: 0.5rem 0.5rem 0 0;
-  //   height: auto;
-  //   // @media screen and (max-width: 991px) {
-  //   //   height: 20rem;
-  //   // }
-  // }
-
-  // .top-content-title {
-  //   display: flex;
-  //   justify-content: space-between;
-  //   flex-direction: column;
-
-  //   .more-nft-title {
-  //     position: relative;
-  //     display: flex;
-  //     align-items: center;
-  //     justify-content: space-between;
-  //     .more-nft-title-box {
-  //       width: calc(100% - 4rem);
-
-  //       .more-nft-name {
-  //         font-size: 1.3rem;
-  //         font-family: $proxima-nova;
-  //         font-weight: 600;
-  //         display: block;
-  //         @include text-ellipsis;
-  //       }
-  //       .right-content {
-  //         width: calc(100% - 8rem);
-  //         white-space: nowrap;
-  //         overflow: hidden;
-  //         text-overflow: ellipsis;
-  //       }
-
-  //       .left-count {
-  //         // position: absolute;
-  //         color: #f21e00;
-  //         right: 0;
-  //         font-family: $proxima-nova;
-  //         font-weight: 800;
-  //         font-size: 1rem;
-  //         top: 0.5em;
-  //         width: 8rem;
-  //         display: flex;
-  //         align-items: center;
-  //         justify-content: flex-end;
-  //       }
-  //     }
-  //   }
-  //   .more-nft-info-header {
-  //     .more-nft-ownername-info {
-  //       display: flex;
-  //     }
-  //   }
-  //   .more-nft-desc {
-  //     font-size: 1rem;
-  //     font-family: $proxima-nova;
-  //     font-weight: 600;
-  //     margin-bottom: 0rem;
-  //     font-size: 0.9rem;
-  //     &.owner-name {
-  //       cursor: pointer;
-  //     }
-  //   }
-  //   .nft-signature {
-  //     background: linear-gradient(180deg, #ef9e5e 0%, #ec7c49 100%);
-  //     -webkit-background-clip: text;
-  //     -webkit-text-fill-color: transparent;
-  //     font-family: $proxima-nova;
-  //     font-weight: 600;
-  //     margin-bottom: 0;
-  //     span {
-  //       font-family: $proxima-nova;
-  //       font-weight: 400;
-  //       font-size: 0.9rem;
-  //     }
-  //   }
-  // }
-
-  // .more-bid-details {
-  //   display: flex;
-  //   justify-content: space-between;
-
-  //   .mb-gems-sec {
-  //     display: flex;
-  //     justify-content: space-between;
-  //     .ios-gems-sec {
-  //       max-height: unset !important;
-  //       object-fit: contain;
-  //       object-position: center;
-  //       padding: 0.2rem;
-  //       min-width: 2rem;
-  //       min-height: 2rem;
-  //       background: #2f2f2f;
-  //       width: 2rem;
-  //       height: 2rem;
-  //       margin-top: 0;
-  //       margin-bottom: 0;
-  //       border-radius: 50rem;
-  //     }
-  //     .ios-value {
-  //       display: flex;
-  //       align-items: center;
-  //       font-size: 1.2rem;
-  //       font-family: $proxima-nova;
-  //       font-weight: 800;
-  //     }
-  //   }
-
-  //   .mb-title {
-  //     font-size: 1rem;
-  //     font-family: $proxima-nova;
-  //     font-weight: 600;
-  //     white-space: nowrap;
-  //     color: #c2c2c2cc !important;
-  //   }
-
-  //   .mb-value {
-  //     font-size: 1.2rem;
-  //     font-family: $proxima-nova;
-  //     font-weight: 800;
-  //   }
-  // }
-
-  // &:hover {
-  //   opacity: 0.85;
-  // }
-}
-
-.font-onerem {
-  font-size: 1.3rem !important;
-}
-
-// .time-counter-box {
-//   position: absolute;
-//   left: 1rem;
-//   right: initial;
-//   padding: 0;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   box-shadow: none;
-//   border-radius: 0.4rem;
-//   color: #fff;
-//   top: -5.7rem;
-//   flex-direction: row;
-//   background: #7e0000;
-//   z-index: 1;
-//   .time-counter-card {
-//     display: flex;
-//     align-items: flex-start;
-//     justify-content: center;
-//     flex-direction: column;
-//     position: relative;
-//     z-index: 1;
-//     color: #fff;
-//     padding: 0.5rem 1rem;
-//     background: #7e0000;
-//     border: 0.1rem solid #ff5858;
-//     border-radius: 0.4rem;
-//     &.startsin {
-//       background: #1f6a19;
-//       border: 0.1rem solid #55b14e;
-//     }
-//     span.fire-icon {
-//       color: #ff7600;
-//       font-size: 1.2rem;
-//       animation: blinker 1s linear infinite;
-//     }
-//   }
-//   img {
-//     height: 2rem;
-//     margin: 0;
-//     width: auto !important;
-//     min-width: unset !important;
-//     margin-right: 0.5rem;
-//   }
-// }
-
 .time-counter-box {
   position: absolute;
   left: 1rem;
@@ -1021,4 +644,210 @@
   margin-bottom: 3rem;
   transform: scale(0.8) !important;
   transition: 0.5s all ease;
+}
+
+.nft-card {
+  background: #141625;
+  border-radius: 15px;
+  padding: 0;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform 0.3s;
+  &:hover {
+    transform: translateY(-5px);
+  }
+  .top-box,
+  .bottom-box {
+    padding: 20px;
+  }
+  .top-box {
+    // padding-bottom: 0;
+    background-image: url("https://community.sap.com/legacyfs/online/storage/blog_attachments/2019/10/641.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  .bottom-box {
+    padding-top: 40px;
+    background: #2e3466;
+    border-radius: 1.5rem;
+  }
+}
+
+.nft-tag {
+  // background: #4b4b4b;
+  background: linear-gradient(
+    90.08deg,
+    rgba(13, 189, 181, 0.8) 0.07%,
+    rgba(129, 154, 224, 0.8) 50.53%,
+    rgba(130, 111, 228, 0.8) 99.94%
+  );
+  border: solid 1px transparent;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.nft-header {
+  text-align: center;
+  text-align: center;
+  margin-bottom: 0;
+  position: relative;
+  top: 55px;
+}
+
+.nft-logo {
+  border-radius: 50%;
+  background: #32354f;
+  padding: 10px;
+}
+
+.nft-title {
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.nft-content {
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.nft-footer {
+  text-align: center;
+}
+
+.nft-button {
+  background: #4b4b4b;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+  &:hover {
+    background: #5c5c5c;
+  }
+}
+
+.theme-btn {
+  color: #fff;
+  display: block;
+  margin: 0 !important;
+  padding: 0.75rem 1.5rem;
+  transition: 0.3s;
+  position: relative;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  // border: solid 0.1rem #2684d9;
+  // background: #383c59;
+
+  background: transparent linear-gradient(85deg, #2684d9 0%, #ec7c49 100%) 0% 0%
+    no-repeat padding-box;
+  border: solid 1px transparent;
+  border-radius: 50rem;
+  font-family: "proxima-nova" !important;
+  font-weight: 600;
+  width: 100%;
+  // color: #de6f00;
+  &:hover,
+  &:focus,
+  &:active {
+    // background: transparent linear-gradient(85deg, #ef9f5e 0%, #ec7c49 100%)
+    //   0% 0% no-repeat padding-box;
+    border: solid 0.1rem #2684d9;
+    background: transparent;
+  }
+}
+
+.more-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  .content-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style-position: inside;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      li {
+        display: flex;
+        justify-content: space-between;
+        span {
+          font-size: 1rem;
+          line-height: normal;
+          color: rgba(255, 255, 255, 0.8);
+        }
+      }
+    }
+    .cus-progress-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      .cus-progress {
+        height: 0.35rem;
+        border-radius: 0.5rem;
+        .cus-progress-bar {
+          background-color: transparent
+            linear-gradient(85deg, #2684d9 0%, #ec7c49 100%) 0% 0% no-repeat
+            padding-box;
+          border-radius: 0.5rem;
+        }
+      }
+      .progress-text {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        span {
+          font-size: 1rem;
+          line-height: normal;
+          color: rgba(255, 255, 255, 0.8);
+        }
+      }
+    }
+  }
+
+  // .theme-btn {
+  //   color: #fff;
+  //   display: block;
+  //   margin: 0 !important;
+  //   padding: 0.75rem 1.5rem;
+  //   transition: 0.3s;
+  //   position: relative;
+  //   text-transform: capitalize;
+  //   font-size: 1.2rem;
+  //   // border: solid 0.1rem #2684d9;
+  //   // background: transparent;
+
+  //   background: transparent linear-gradient(85deg, #2684d9 0%, #ec7c49 100%) 0%
+  //     0% no-repeat padding-box;
+  //   border: solid 1px transparent;
+  //   border-radius: 50rem;
+  //   font-family: "proxima-nova" !important;
+  //   font-weight: 600;
+  //   width: 100%;
+  //   // color: #de6f00;
+  //   &:hover,
+  //   &:focus,
+  //   &:active {
+  //     // background: transparent linear-gradient(85deg, #ef9f5e 0%, #ec7c49 100%)
+  //     //   0% 0% no-repeat padding-box;
+  //     border: solid 0.1rem #2684d9;
+  //     background: transparent;
+  //   }
+  // }
+}
+
+.font-onerem {
+  font-size: 1.3rem !important;
 }

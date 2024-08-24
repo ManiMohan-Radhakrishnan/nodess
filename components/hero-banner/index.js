@@ -51,7 +51,7 @@ const HeroBanner = ({}) => {
                   </div>
                   <div className={style["content-wrapper"]}>
                     <div className={style["inner-content-wrapper"]}>
-                      <h1>NODESS</h1>
+                      <h1>NODESS SALE</h1>
                       <div className={style["secial-icon-wrapper"]}>
                         <TbWorld color="#a69dbe" />
                         <RiTwitterXFill color="#a69dbe" />
@@ -63,10 +63,10 @@ const HeroBanner = ({}) => {
                         <RiTwitterXFill color="#a69dbe" />
                       </div>
                       <p>
-                        NODESS is the largest modular data layer for gaming, AI,
-                        and ∞, pioneering a future where data generates value
-                        for all. $20M from Temasek’s Vertex, ConsenSys
-                        (Metamask), OKX, HashKey, and more.
+                        NODESS Sale is the largest modular data layer for
+                        gaming, AI, and ∞, pioneering a future where data
+                        generates value for all. $20M from Temasek’s Vertex,
+                        ConsenSys (Metamask), OKX, HashKey, and more.
                       </p>
                       <div className={style["network-wrapper"]}>
                         <div className={style["icon-wrapper"]}>
@@ -81,8 +81,8 @@ const HeroBanner = ({}) => {
                             }
                             content={
                               <>
-                                If the bid is not accepted before the shown time
-                                in the countdown, the bid will expire. <br />
+                                Available networks in this token sale. Switch
+                                network via the wallet to participate.. <br />
                               </>
                             }
                             placement="top"

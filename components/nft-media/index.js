@@ -11,6 +11,7 @@ const NFTMedia = ({
   walletCollectionStatus,
   saleList,
   Balance = 0,
+  handleSignIn,
   // quantityPerOrder = 1,
 }) => {
   const [amount, setAmount] = useState(0);
@@ -218,6 +219,7 @@ const NFTMedia = ({
                 <button
                   className={style["btn-balance"]}
                   disabled={Balance?.formatted <= 0}
+                  onClick={handleSignIn}
                 >
                   Buy Now
                 </button>

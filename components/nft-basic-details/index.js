@@ -15,7 +15,7 @@ const NFTBaseDetails = ({ saleList }) => {
           <p>
             {" "}
             Timezone: UTC{" "}
-            {dayjs(saleList?.purchasePeriod?.startTime).format("A Z'")}
+            {dayjs(saleList?.purchasePeriod?.startTime).format("A Z")}
           </p>
           <p>
             Timeline updates{" "}
@@ -29,10 +29,9 @@ const NFTBaseDetails = ({ saleList }) => {
               }
               content={
                 <>
-                  If the bid is not accepted before the shown time in the
-                  countdown, the bid will expire. <br />
-                  The <b>Funds on Hold</b> will be returned to the{" "}
-                  <b>Available Funds</b> of the bidder&apos;s wallet.
+                  Be sure to check the timeline regularly for updates. The
+                  distribution dates listed are indicative and may change, so
+                  stay tuned for the latest information.
                 </>
               }
               placement="top"

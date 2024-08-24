@@ -7,7 +7,7 @@ import NFTProperties from "../../components/nft-properties";
 import Header from "../../components/header";
 import { getNodessList } from "../../utils/base-methods";
 import { useRouter } from "next/router";
-import { useAccount, useConfig } from "wagmi";
+import { useAccount, useConfig, useConnect, useSignMessage } from "wagmi";
 import Image from "next/image";
 import { getBalance } from "@wagmi/core";
 // import { config } from "../../utils/get-balance-config";
@@ -28,11 +28,10 @@ const Details = () => {
 
   const walletCollectionStatus = useAccount();
 
-  const config = useConfig();
+  const { signMessageAsync } = useSignMessage();
+  const { connect, connectors } = useConnect();
 
-  // const promise = getBalance(config, {
-  //   address: walletCollectionStatus?.address,
-  // });
+  const config = useConfig();
 
   useEffect(() => {
     if (config && walletCollectionStatus?.address) {
@@ -69,6 +68,20 @@ const Details = () => {
     } catch (error) {
       setLoading(false);
       // console.error("Error in fetching the NFT details", error);
+    }
+  };
+
+  const handleSignIn = async () => {
+    if (!walletCollectionStatus?.isConnected) {
+      connect({ connector: connectors[0] });
+    }
+
+    const message = "Sign this message to authenticate";
+    try {
+      const signature = await signMessageAsync({ message });
+      console.log("Signature:", signature);
+    } catch (error) {
+      console.error("Error signing message:", error);
     }
   };
 
@@ -134,6 +147,7 @@ const Details = () => {
                     saleList={saleList}
                     walletCollectionStatus={walletCollectionStatus}
                     Balance={balance}
+                    handleSignIn={handleSignIn}
                   />
                 </div>
 
