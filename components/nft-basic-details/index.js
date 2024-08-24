@@ -42,6 +42,7 @@ const NFTBaseDetails = ({ saleList }) => {
         <div className={style["verifier-info-wrapper"]}>
           <div className={style["purchase-info-wrapper"]}>
             <Image
+              fetchpriority="high"
               unoptimized={true}
               width="40"
               height="40"
@@ -50,7 +51,11 @@ const NFTBaseDetails = ({ saleList }) => {
               placeholder={"blur"}
               blurDataURL={"/sample.gif"}
               alt="media_logo_check11"
-              src={saleList?.saleToken?.tokenImage}
+              src={
+                saleList?.saleToken?.tokenImage
+                  ? saleList?.saleToken?.tokenImage
+                  : "/sample.gif"
+              }
               role="button"
             />{" "}
             <div className={style["title-wrapper"]}>

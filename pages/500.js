@@ -24,6 +24,7 @@ const NotFound = () => {
                 className="not-found "
               >
                 <Image
+                  fetchpriority="high"
                   unoptimized={true}
                   src={images.jumpTradeLogoSVG}
                   className="logo-img"

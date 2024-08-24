@@ -36,6 +36,7 @@ const HeroBanner = ({}) => {
                 <div className={style["banner-content-wrapper"]}>
                   <div className={style["image-content-wrapper"]}>
                     <Image
+                      fetchpriority="high"
                       unoptimized={true}
                       width="300"
                       height="300"
@@ -88,6 +89,7 @@ const HeroBanner = ({}) => {
                           />
                         </div>
                         <Image
+                          fetchpriority="high"
                           unoptimized={true}
                           width="20"
                           height="20"

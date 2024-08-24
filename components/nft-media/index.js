@@ -61,6 +61,7 @@ const NFTMedia = ({
                 <div className={style["title-wrapper"]}>
                   <p>Total Purchased</p>
                   <Image
+                    fetchpriority="high"
                     unoptimized={true}
                     width="40"
                     height="40"
@@ -69,7 +70,11 @@ const NFTMedia = ({
                     placeholder={"blur"}
                     blurDataURL={"/sample.gif"}
                     alt="media_logo_check11"
-                    src={saleList?.saleToken?.tokenImage}
+                    src={
+                      saleList?.saleToken?.tokenImage
+                        ? saleList?.saleToken?.tokenImage
+                        : "/sample.gif"
+                    }
                     role="button"
                   />{" "}
                 </div>
@@ -104,6 +109,7 @@ const NFTMedia = ({
                 <div className={style["detail-wrapper"]}>
                   <div className={style["icon"]}>
                     <Image
+                      fetchpriority="high"
                       unoptimized={true}
                       width="40"
                       height="40"
@@ -112,7 +118,11 @@ const NFTMedia = ({
                       placeholder={"blur"}
                       blurDataURL={"/sample.gif"}
                       alt="media_logo_check11"
-                      src={saleList?.saleToken?.tokenImage}
+                      src={
+                        saleList?.saleToken?.tokenImage
+                          ? saleList?.saleToken?.tokenImage
+                          : "/sample.gif"
+                      }
                       role="button"
                     />{" "}
                   </div>
@@ -157,6 +167,7 @@ const NFTMedia = ({
                   <p>
                     Your Balance{" "}
                     <Image
+                      fetchpriority="high"
                       unoptimized={true}
                       width="20"
                       height="20"
@@ -165,7 +176,11 @@ const NFTMedia = ({
                       placeholder={"blur"}
                       blurDataURL={"/sample.gif"}
                       alt="media_logo_check11"
-                      src={saleList?.paymentToken?.tokenImage}
+                      src={
+                        saleList?.paymentToken?.tokenImage
+                          ? saleList?.paymentToken?.tokenImage
+                          : "/sample.gif"
+                      }
                       role="button"
                     />{" "}
                   </p>
@@ -234,8 +249,8 @@ const NFTMedia = ({
                       fill="url(#paint0_linear_7153_130387)"
                     ></path>
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
+                      fillRule="evenodd"
+                      clipRule="evenodd"
                       d="M21.9531 65.1727V47.666H76.9741V65.1727C76.9741 80.3286 64.6195 92.6832 49.4636 92.6832C34.3077 92.6832 21.9531 80.3286 21.9531 65.1727ZM51.9646 72.2252C54.8658 71.175 56.9665 68.4241 56.9665 65.1727C56.9665 61.0209 53.6154 57.6698 49.4636 57.6698C45.3119 57.6698 41.9607 61.0209 41.9607 65.1727C41.9607 68.4241 44.0614 71.175 46.9627 72.2252V82.6793H51.9646V72.2252Z"
                       fill="#6361C9"
                     ></path>
@@ -248,8 +263,8 @@ const NFTMedia = ({
                         y2="73.9444"
                         gradientUnits="userSpaceOnUse"
                       >
-                        <stop stop-color="#B6DCFF" stop-opacity="0.12"></stop>
-                        <stop offset="1" stop-color="#66B6FF"></stop>
+                        <stop stopColor="#B6DCFF" stopOpacity="0.12"></stop>
+                        <stop offset="1" stopColor="#66B6FF"></stop>
                       </linearGradient>
                     </defs>
                   </svg>

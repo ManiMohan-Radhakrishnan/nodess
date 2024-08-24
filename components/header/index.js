@@ -32,7 +32,7 @@ const Header = ({ bgImage = false }) => {
               role="button"
               className={style["head-title"]}
             >
-              {/* <Image
+              {/* <Image fetchpriority="high"
                 unoptimized={true}
                 height={30}
                 width={30}

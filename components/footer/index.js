@@ -9,6 +9,7 @@ export default function Footer({ className }) {
     >
       <div className="container-fluid d-flex flex-column flex-md-row">
         <Image
+          fetchpriority="high"
           src="/img_container.svg"
           width={866}
           height={26}
@@ -16,6 +17,7 @@ export default function Footer({ className }) {
           className={`${style.imageContainer} object-contain`}
         />
         <Image
+          fetchpriority="high"
           src="/img_link_impossible.svg"
           width={106}
           height={26}

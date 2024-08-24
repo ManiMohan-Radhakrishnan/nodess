@@ -23,6 +23,7 @@ const NFTCard = ({ nft }) => {
           <div className={style["more-card-header"]}>
             <div className={style["icon"]}>
               <Image
+                fetchpriority="high"
                 unoptimized={true}
                 width="100"
                 height="100"
@@ -31,7 +32,7 @@ const NFTCard = ({ nft }) => {
                 placeholder={"blur"}
                 blurDataURL={"/sample.gif"}
                 alt="media_logo_check11"
-                src={CoinImage}
+                src={CoinImage ? CoinImage : "/sample.gif"}
                 role="button"
               />
             </div>
@@ -57,6 +58,7 @@ const NFTCard = ({ nft }) => {
               <span>Pay in</span>
               <span>
                 <Image
+                  fetchpriority="high"
                   unoptimized={true}
                   width="18"
                   height="18"
@@ -65,7 +67,11 @@ const NFTCard = ({ nft }) => {
                   placeholder={"blur"}
                   blurDataURL={"/sample.gif"}
                   alt="media_logo_check11"
-                  src={nft?.paymentToken?.tokenImage}
+                  src={
+                    nft?.paymentToken?.tokenImage
+                      ? nft?.paymentToken?.tokenImage
+                      : "/sample.gif"
+                  }
                   role="button"
                 />
                 {nft?.paymentToken?.tokenSymbol}

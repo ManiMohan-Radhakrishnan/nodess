@@ -10,7 +10,7 @@ import { useRouter } from "next/router";
 import { useAccount, useConfig } from "wagmi";
 import Image from "next/image";
 import { getBalance } from "@wagmi/core";
-import { config } from "../../utils/get-balance-config";
+// import { config } from "../../utils/get-balance-config";
 import NFTPropertiesTwo from "../../components/nft-properties-two";
 import {
   NFTLoader,
@@ -30,19 +30,21 @@ const Details = () => {
 
   const config = useConfig();
 
-  const promise = getBalance(config, {
-    address: walletCollectionStatus?.address,
-  });
+  // const promise = getBalance(config, {
+  //   address: walletCollectionStatus?.address,
+  // });
 
   useEffect(() => {
-    promise
-      .then((balance) => {
-        setBalance(balance);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
+    if (config && walletCollectionStatus?.address) {
+      getBalance(config, { address: walletCollectionStatus?.address })
+        .then((balance) => {
+          setBalance(balance);
+        })
+        .catch((error) => {
+          console.error("Failed to fetch balance:", error);
+        });
+    }
+  }, [config, walletCollectionStatus?.address]);
 
   useEffect(() => {
     if (saleId) {
@@ -83,6 +85,7 @@ const Details = () => {
                 <div className="title">
                   <div className="icon">
                     <Image
+                      fetchpriority="high"
                       unoptimized={true}
                       width="40"
                       height="40"
@@ -91,10 +94,15 @@ const Details = () => {
                       placeholder={"blur"}
                       blurDataURL={"/sample.gif"}
                       alt="media_logo_check11"
-                      src={saleList?.saleToken?.tokenImage}
+                      src={
+                        saleList?.saleToken?.tokenImage
+                          ? saleList?.saleToken?.tokenImage
+                          : "/sample.gif"
+                      }
                       role="button"
                     />
                     <Image
+                      fetchpriority="high"
                       unoptimized={true}
                       width="40"
                       height="40"
