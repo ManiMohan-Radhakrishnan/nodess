@@ -655,7 +655,9 @@
   cursor: pointer;
   transition: transform 0.3s;
   &:hover {
-    transform: translateY(-5px);
+    // transform: translateY(-5px);
+    transform: translateY(-18px);
+    transition: 0.5s;
   }
   .top-box,
   .bottom-box {
@@ -786,7 +788,8 @@
         span {
           font-size: 1rem;
           line-height: normal;
-          color: rgba(255, 255, 255, 0.8);
+          color: #a69dbe;
+          font-weight: 800;
         }
       }
     }
@@ -811,7 +814,8 @@
         span {
           font-size: 1rem;
           line-height: normal;
-          color: rgba(255, 255, 255, 0.8);
+          color: #a69dbe;
+          font-weight: 800;
         }
       }
     }

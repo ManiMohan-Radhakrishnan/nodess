@@ -16,6 +16,8 @@ import {
   NFTLoader,
   WebViewLoader,
 } from "../../components/nft-basic-details/content-loader";
+import NFTSold from "../../components/nft-soldout";
+import NFTSuccess from "../../components/nft-success";
 
 const Details = () => {
   const router = useRouter();
@@ -27,9 +29,18 @@ const Details = () => {
   const [loading, setLoading] = useState(false);
 
   const walletCollectionStatus = useAccount();
+  console.log("🚀 ~ Details ~ walletCollectionStatus:", walletCollectionStatus);
 
   const { signMessageAsync } = useSignMessage();
   const { connect, connectors } = useConnect();
+
+  const [signature, setSignature] = useState(null);
+
+  const [success, setSuccess] = useState(false);
+
+  const [modalShow, setModalShow] = useState(false);
+
+  const [soldOut, setSoldOut] = useState(false);
 
   const config = useConfig();
 
@@ -79,12 +90,28 @@ const Details = () => {
     const message = "Sign this message to authenticate";
     try {
       const signature = await signMessageAsync({ message });
-      console.log("Signature:", signature);
+      console.log("🚀 ~ handleSignIn ~ signature:", signature);
+      setSignature(signature);
+      setSuccess(true);
+      setModalShow(true);
+      // Set a timeout to clear the signature after 2 minutes
+      setTimeout(() => {
+        setModalShow(false);
+        setSoldOut(true);
+
+        console.log("Signature cleared after 2 minutes");
+      }, 5000); // 120,000 milliseconds = 2 minutes
     } catch (error) {
       console.error("Error signing message:", error);
     }
   };
-
+  {
+    console.log(
+      walletCollectionStatus?.isDisconnected,
+      "walletCollectionStatus?.isDisconnected",
+      soldOut
+    );
+  }
   // https://verifier.carv.io/images/icons/networks/42161.svg
 
   return (
@@ -135,21 +162,54 @@ const Details = () => {
                   <h1>{saleList?.saleTitle}</h1>
                 </div>
               </div>
+              {console.log(
+                walletCollectionStatus?.isDisconnected,
+                "walletCollectionStatus?.isDisconnected"
+              )}
               <div
                 className={`row ${
-                  walletCollectionStatus?.status === "connected"
+                  walletCollectionStatus?.status === "connected" && !soldOut
                     ? "fit-to-height"
                     : ""
                 }`}
               >
-                <div className="col-12 col-lg-7">
-                  <NFTMedia
-                    saleList={saleList}
-                    walletCollectionStatus={walletCollectionStatus}
-                    Balance={balance}
-                    handleSignIn={handleSignIn}
-                  />
-                </div>
+                {!walletCollectionStatus?.isDisconnected &&
+                !success &&
+                !soldOut ? (
+                  <div className="col-12 col-lg-7">
+                    <NFTMedia
+                      saleList={saleList}
+                      walletCollectionStatus={walletCollectionStatus}
+                      Balance={balance}
+                      handleSignIn={handleSignIn}
+                    />
+                  </div>
+                ) : success && !soldOut ? (
+                  <>
+                    {" "}
+                    <div className="col-12 col-lg-7">
+                      <NFTSuccess modalShow={modalShow} />
+                    </div>
+                  </>
+                ) : soldOut ? (
+                  <>
+                    {" "}
+                    <div className="col-12 col-lg-7">
+                      <NFTSold />
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="col-12 col-lg-7">
+                      <NFTMedia
+                        saleList={saleList}
+                        walletCollectionStatus={walletCollectionStatus}
+                        Balance={balance}
+                        handleSignIn={handleSignIn}
+                      />
+                    </div>
+                  </>
+                )}
 
                 <div className="col-12 col-lg-5">
                   <NFTBaseDetails saleList={saleList} />
