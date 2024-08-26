@@ -31,7 +31,7 @@ const NFTSuccess = ({}) => {
                 blurDataURL={"/sample.gif"}
               /> */}
             </div>
-            <h5>The Node sale has ended</h5>
+            <h5>The Node sale Successfully</h5>
             <span>Node has been sold out</span>
           </div>
         </div>
