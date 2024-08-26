@@ -2,9 +2,17 @@ import { useState } from "react";
 import style from "./style.module.scss";
 import { Modal, Table } from "react-bootstrap";
 import { BiX } from "react-icons/bi";
+import { toast } from "react-toastify";
+import { FaCheckCircle } from "react-icons/fa";
 const PromoCodeModal = ({ modalShow, setModalShow }) => {
   const handleClose = () => {
     setModalShow(false);
+  };
+  const handleApply = () => {
+    setModalShow(false);
+    toast.success("PromoCode Applyed Sucessfully", {
+      icon: <FaCheckCircle size={50} color="green" />,
+    });
   };
   return (
     <>
@@ -36,8 +44,12 @@ const PromoCodeModal = ({ modalShow, setModalShow }) => {
               <input type="text" />
             </div>
             <div className={style["button-wrapper"]}>
-              <button className={style["btn-primary"]}>Cancel</button>
-              <button className={style["btn-secondary"]}>Apply</button>
+              <button className={style["btn-primary"]} onClick={handleClose}>
+                Cancel
+              </button>
+              <button className={style["btn-secondary"]} onClick={handleApply}>
+                Apply
+              </button>
             </div>
           </div>
         </Modal.Body>
