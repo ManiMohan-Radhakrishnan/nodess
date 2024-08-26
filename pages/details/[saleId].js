@@ -30,7 +30,6 @@ const Details = () => {
   const [loading, setLoading] = useState(false);
 
   const walletCollectionStatus = useAccount();
-  console.log("🚀 ~ Details ~ walletCollectionStatus:", walletCollectionStatus);
 
   const { signMessageAsync } = useSignMessage();
   const { connect, connectors } = useConnect();
