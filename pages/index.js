@@ -11,7 +11,7 @@ export default function Home() {
         <HeroBanner />
         <HomeNodessList />
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

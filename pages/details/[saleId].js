@@ -18,6 +18,7 @@ import {
 } from "../../components/nft-basic-details/content-loader";
 import NFTSold from "../../components/nft-soldout";
 import NFTSuccess from "../../components/nft-success";
+import Footer from "../../components/footer";
 
 const Details = () => {
   const router = useRouter();
@@ -240,6 +241,7 @@ const Details = () => {
           <NFTLoader />
         </>
       )}
+      <Footer />
     </>
   );
 };

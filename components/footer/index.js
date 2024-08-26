@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import style from "./style.module.scss";
+import CoinImage from "../../images/coin.png";
 
 export default function Footer({ className }) {
   return (
@@ -10,20 +11,24 @@ export default function Footer({ className }) {
       <div className="container-fluid d-flex flex-column flex-md-row">
         <Image
           fetchpriority="high"
-          src="/img_container.svg"
-          width={866}
-          height={26}
+          src={CoinImage}
+          width="50"
+          height="50"
           alt="Image Container"
           className={`${style.imageContainer} object-contain`}
         />
-        <Image
+        {"   "}
+        <div className="col-md-8">
+          <h1 className="me-4 text-nowrap">NODESS SALE</h1>
+        </div>
+        {/* <Image
           fetchpriority="high"
-          src="/img_link_impossible.svg"
+          src={CoinImage}
           width={106}
           height={26}
           alt="Impossible Link"
           className={`${style.imageLink} object-contain`}
-        />
+        /> */}
         <div className="d-flex flex-grow-1 justify-content-end align-self-md-stretch">
           <div className="w-18 justify-content-center w-lg-100 w-md-100">
             <div className="d-flex w-100 align-items-center gap-3">
