@@ -211,14 +211,19 @@ const NFTMedia = ({
                 </>
               ) : InsufficientBalance ? (
                 <>
-                  <button className={style["btn-balance"]} disabled={true}>
-                    Insufficient Balance
+                  <button
+                    className={style["btn-balance"]}
+                    // disabled={true}
+                    onClick={handleSignIn}
+                  >
+                    {/* Insufficient Balance */}
+                    Buy Now
                   </button>
                 </>
               ) : (
                 <button
                   className={style["btn-balance"]}
-                  disabled={Balance?.formatted <= 0}
+                  // disabled={Balance?.formatted < 1000}
                   onClick={handleSignIn}
                 >
                   Buy Now

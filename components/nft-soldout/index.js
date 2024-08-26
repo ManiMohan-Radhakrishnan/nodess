@@ -56,7 +56,7 @@ const NFTSold = ({}) => {
                 ></path>
               </svg>
             </div>
-            <h5>The sale has ended</h5>
+            <h5>The Node sale has ended</h5>
             <span>Node has been sold out</span>
           </div>
         </div>

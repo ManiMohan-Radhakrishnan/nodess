@@ -15,7 +15,7 @@ const NFTCard = ({ nft }) => {
   return (
     <div className={`${style["nft-card"]}`} onClick={handlePurchaseClick}>
       <div className={style["top-box"]}>
-        <div className={style["nft-tag"]}># NFT</div>
+        <div className={style["nft-tag"]}># AI</div>
         <div className={style["nft-header"]}>
           <Image
             src={CoinImage ? CoinImage : "/sample.gif"}

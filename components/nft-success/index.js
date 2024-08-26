@@ -1,9 +1,9 @@
 import Lottie from "lottie-react";
 import style from "./style.module.scss";
-// import tickAnimation from "../../images/json/Tick.json";
+import tickAnimation from "../../images/json/Tick.json";
 import Image from "next/image";
 
-import tickAnimation from "../../images/success.screen.gif";
+// import tickAnimation from "../../images/success.screen.gif";
 
 const NFTSuccess = ({}) => {
   return (
@@ -14,12 +14,12 @@ const NFTSuccess = ({}) => {
         >
           <div className={style["disconnecting"]}>
             <div className="icon-lock">
-              {/* <Lottie
+              <Lottie
                 animationData={tickAnimation}
                 className={style["lotti-icon"]}
                 loop={false}
-              /> */}
-              <Image
+              />
+              {/* <Image
                 unoptimized={true}
                 width="300"
                 height="300"
@@ -29,9 +29,9 @@ const NFTSuccess = ({}) => {
                 priority={true}
                 placeholder={"blur"}
                 blurDataURL={"/sample.gif"}
-              />
+              /> */}
             </div>
-            <h5>The sale has ended</h5>
+            <h5>The Node sale has ended</h5>
             <span>Node has been sold out</span>
           </div>
         </div>

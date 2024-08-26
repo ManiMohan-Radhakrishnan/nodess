@@ -106,13 +106,7 @@ const Details = () => {
       console.error("Error signing message:", error);
     }
   };
-  {
-    console.log(
-      walletCollectionStatus?.isDisconnected,
-      "walletCollectionStatus?.isDisconnected",
-      soldOut
-    );
-  }
+
   // https://verifier.carv.io/images/icons/networks/42161.svg
 
   return (
@@ -163,13 +157,12 @@ const Details = () => {
                   <h1>{saleList?.saleTitle}</h1>
                 </div>
               </div>
-              {console.log(
-                walletCollectionStatus?.isDisconnected,
-                "walletCollectionStatus?.isDisconnected"
-              )}
+
               <div
                 className={`row ${
-                  walletCollectionStatus?.status === "connected" && !soldOut
+                  walletCollectionStatus?.status === "connected" &&
+                  !soldOut &&
+                  !success
                     ? "fit-to-height"
                     : ""
                 }`}
