@@ -63,10 +63,9 @@ const HeroBanner = ({}) => {
                         <RiTwitterXFill color="#a69dbe" />
                       </div>
                       <p>
-                        NODESS Sale is the largest modular data layer for
-                        gaming, AI, and ∞, pioneering a future where data
-                        generates value for all. $20M from Temasek’s Vertex,
-                        ConsenSys (Metamask), OKX, HashKey, and more.
+                        NODESS Sale is the leading modular data layer for
+                        gaming, AI, and beyond, driving a future where data
+                        creates value for everyone.
                       </p>
                       <div className={style["network-wrapper"]}>
                         <div className={style["icon-wrapper"]}>
