@@ -61,8 +61,6 @@ const HomeNodessList = () => {
     }
   };
 
-  console.log(hasMore, "hasMore");
-
   return (
     <>
       {!loading ? (
