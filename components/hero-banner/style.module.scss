@@ -1670,8 +1670,8 @@
       overflow: hidden;
       padding: 1rem;
       @media screen and (min-width: 992px) {
-        padding: 1rem 3rem;
-        min-height: 90vh;
+        padding: 2rem 3rem;
+        min-height: 75vh;
       }
 
       .bg-content-wrapper {
@@ -1740,6 +1740,7 @@
             .network-wrapper {
               display: flex;
               justify-content: space-between;
+              align-items: center;
               padding: 1.5rem;
               background-color: #524f5980;
               border: 1px solid #4a415d80;
@@ -1759,6 +1760,11 @@
                   width: 1rem;
                   height: 1rem;
                 }
+              }
+              img {
+                width: 2rem;
+                height: 2rem;
+                object-fit: contain;
               }
             }
           }

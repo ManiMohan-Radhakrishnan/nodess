@@ -4,6 +4,8 @@ import useScrollPosition from "../../utils/scroll-position";
 import style from "./style.module.scss";
 
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import CoinImage from "../../images/coin.svg";
+import Image from "next/image";
 
 const Header = ({ bgImage = false }) => {
   const scrollPosition = useScrollPosition();
@@ -32,16 +34,17 @@ const Header = ({ bgImage = false }) => {
               role="button"
               className={style["head-title"]}
             >
-              {/* <Image fetchpriority="high"
+              <Image
+                fetchpriority="high"
                 unoptimized={true}
-                height={30}
-                width={30}
-                src={images.jumpTradeLogo}
+                height="auto"
+                width="100"
+                src={CoinImage}
                 alt="jumpTradeLogo"
                 className={style["logoImage"]}
                 priority={true}
-              /> */}
-              <div
+              />
+              {/* <div
                 className="sub-head-title header-powereby "
                 role="button"
                 onClick={() => {
@@ -49,7 +52,7 @@ const Header = ({ bgImage = false }) => {
                 }}
               >
                 <h3>NODESS SALE</h3>
-              </div>
+              </div> */}
             </Navbar.Brand>
 
             <>

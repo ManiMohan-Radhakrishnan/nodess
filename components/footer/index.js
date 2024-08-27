@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import style from "./style.module.scss";
-import CoinImage from "../../images/coin.png";
+import CoinImage from "../../images/coin.svg";
 
 export default function Footer({ className }) {
   return (
@@ -12,15 +12,12 @@ export default function Footer({ className }) {
         <Image
           fetchpriority="high"
           src={CoinImage}
-          width="50"
-          height="50"
+          width="100"
+          height="auto"
           alt="Image Container"
           className={`${style.imageContainer} object-contain`}
         />
         {"   "}
-        <div className="col-md-8">
-          <h1 className="me-4 text-nowrap">NODESS SALE</h1>
-        </div>
         {/* <Image
           fetchpriority="high"
           src={CoinImage}
@@ -34,9 +31,7 @@ export default function Footer({ className }) {
             <div className="d-flex w-100 align-items-center gap-3">
               <p className={`${style.divider} mb-0`}>|</p>
               <div>
-                <p className={`${style.copyright} mb-0`}>
-                  © 2024 <span className={style.nodess}>NODESS</span>
-                </p>
+                <p className={`${style.copyright} mb-0`}>© 2024 </p>
               </div>
             </div>
           </div>

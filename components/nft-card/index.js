@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import style from "./style.module.scss";
 import { useRouter } from "next/router";
-import CoinImage from "../../images/coin.png";
+import CoinImage from "../../images/coin2.png";
 
 const NFTCard = ({ nft }) => {
   const router = useRouter();

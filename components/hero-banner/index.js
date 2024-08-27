@@ -9,10 +9,17 @@ import style from "./style.module.scss";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import { TbWorld } from "react-icons/tb";
-import { RiTwitterXFill } from "react-icons/ri";
+import {
+  RiDiscordFill,
+  RiMediumFill,
+  RiTelegramFill,
+  RiTwitterXFill,
+} from "react-icons/ri";
 import ToolTip from "../tooltip";
 import { BsFillQuestionCircleFill } from "react-icons/bs";
 import images from "../../utils/images-new.json";
+import { IoNewspaperSharp } from "react-icons/io5";
+import BannerImage1 from "../../images/banner.png";
 
 const HeroBanner = ({}) => {
   const swiperRef = useRef();
@@ -32,7 +39,7 @@ const HeroBanner = ({}) => {
           loop
           effect={"fade"}
         >
-          <SwiperSlide>
+          {/* <SwiperSlide>
             <div className="item">
               <section className={`${style["hero-banner-sec"]}`}>
                 <div className={style["banner-content-wrapper"]}>
@@ -110,9 +117,9 @@ const HeroBanner = ({}) => {
                 </div>
               </section>
             </div>
-          </SwiperSlide>
+          </SwiperSlide> */}
 
-          <SwiperSlide>
+          {/* <SwiperSlide>
             <div className="item">
               <section className={`${style["hero-banner-sec"]}`}>
                 <div className={style["bg-content-wrapper"]}>
@@ -136,7 +143,7 @@ const HeroBanner = ({}) => {
                   >
                     <div className={style["inner-content-wrapper"]}>
                       <h1>NODESS SALE</h1>
-                      {/* <div className={style["secial-icon-wrapper"]}>
+                      <div className={style["secial-icon-wrapper"]}>
                         <TbWorld color="#a69dbe" />
                         <RiTwitterXFill color="#a69dbe" />
                         <TbWorld color="#a69dbe" />
@@ -145,7 +152,7 @@ const HeroBanner = ({}) => {
                         <RiTwitterXFill color="#a69dbe" />
                         <TbWorld color="#a69dbe" />
                         <RiTwitterXFill color="#a69dbe" />
-                      </div> */}
+                      </div>
                       <p>
                         NODESS Sale is the leading modular data layer for
                         gaming, AI, and beyond, driving a future where data
@@ -156,7 +163,7 @@ const HeroBanner = ({}) => {
                 </div>
               </section>
             </div>
-          </SwiperSlide>
+          </SwiperSlide> */}
 
           <SwiperSlide>
             <div className="item">
@@ -173,28 +180,63 @@ const HeroBanner = ({}) => {
                     blurDataURL={"/sample.gif"}
                     alt="BannerImage"
                     src={
-                      "https://t3.ftcdn.net/jpg/02/87/64/68/360_F_287646869_EpBkmeh4ESmhE8jmSRYd8JH1BVfXoRxs.jpg"
+                      "https://img.freepik.com/free-photo/abstract-technology-background-concept_1194-617185.jpg"
                     }
                     role="button"
                   />
                   <div className={style["content-container"]}>
                     <div className={style["inner-content-wrapper"]}>
                       <h1>NODESS SALE</h1>
-                      {/* <div className={style["secial-icon-wrapper"]}>
+                      <div className={style["secial-icon-wrapper"]}>
                         <TbWorld color="#a69dbe" />
                         <RiTwitterXFill color="#a69dbe" />
-                        <TbWorld color="#a69dbe" />
-                        <RiTwitterXFill color="#a69dbe" />
-                        <TbWorld color="#a69dbe" />
-                        <RiTwitterXFill color="#a69dbe" />
-                        <TbWorld color="#a69dbe" />
-                        <RiTwitterXFill color="#a69dbe" />
-                      </div> */}
+                        <RiDiscordFill color="#a69dbe" />
+                        <RiTelegramFill color="#a69dbe" />
+                        <RiMediumFill color="#a69dbe" />
+                        <RiDiscordFill color="#a69dbe" />
+                        <IoNewspaperSharp color="#a69dbe" />
+                      </div>
                       <p>
                         NODESS Sale is the leading modular data layer for
                         gaming, AI, and beyond, driving a future where data
                         creates value for everyone.
                       </p>
+                      <div className={style["network-wrapper"]}>
+                        <div className={style["icon-wrapper"]}>
+                          <p>Network</p>
+                          <ToolTip
+                            icon={
+                              <BsFillQuestionCircleFill
+                                color={"#a984fdcc"}
+                                size={14}
+                                className="mb-1 check-icon"
+                              />
+                            }
+                            content={
+                              <>
+                                Available networks in this token sale. Switch
+                                network via the wallet to participate.. <br />
+                              </>
+                            }
+                            placement="top"
+                          />
+                        </div>
+                        <Image
+                          fetchpriority="high"
+                          unoptimized={true}
+                          width="20"
+                          height="20"
+                          priority={true}
+                          loading="eager"
+                          placeholder={"blur"}
+                          blurDataURL={"/sample.gif"}
+                          alt="BannerImage"
+                          src={
+                            "https://verifier.carv.io/images/icons/networks/42161.svg"
+                          }
+                          role="button"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
