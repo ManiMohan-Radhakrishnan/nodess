@@ -17,30 +17,37 @@ const NFTMedia = ({
   const [amount, setAmount] = useState(0);
   const [value, setValue] = useState(0);
   const InsufficientBalance = amount > Balance?.formatted;
+  const [modalShow, setModalShow] = useState(false);
 
   const handleIncrease = () => {
-    setAmount((prevAmount) => parseFloat((prevAmount + 1).toFixed(4)));
+    setValue((prevValue) => {
+      const numericValue = Number(prevValue); // Convert to number
+      return numericValue < 100000000 ? numericValue + 1 : numericValue;
+    });
   };
 
   const handleDecrease = () => {
-    setAmount((prevAmount) =>
-      parseFloat(Math.max(prevAmount - 1, 0).toFixed(4))
-    );
+    setValue((prevValue) => {
+      const numericValue = Number(prevValue); // Convert to number
+      return numericValue > 0 ? numericValue - 1 : numericValue;
+    });
   };
 
   const handleChange = (event) => {
     const value = event.target.value;
-    setValue(value);
+
     if (/^\d*\.?\d*$/.test(value)) {
-      const inputValue = parseFloat(value) || 0;
-      const newAmount = (
-        inputValue * saleList?.purchasePeriod?.salePrice
-      ).toFixed(4);
-      setAmount(parseFloat(newAmount));
+      const inputValue = parseFloat(value);
+      setValue(inputValue);
+
+      if (saleList?.purchasePeriod?.salePrice) {
+        const newAmount = (
+          inputValue * saleList.purchasePeriod.salePrice
+        ).toFixed(4);
+        setAmount(parseFloat(newAmount));
+      }
     }
   };
-
-  const [modalShow, setModalShow] = useState(false);
 
   const handleClick = async () => {
     setModalShow(true);
@@ -148,9 +155,16 @@ const NFTMedia = ({
                         value={value}
                         onChange={handleChange}
                         // min="0"
+                        max="100"
                         // step="0.01"
                         style={{ margin: "0 10px", textAlign: "center" }}
                         placeholder="0"
+                        onInput={(e) => {
+                          e.target.value = e.target.value.replace(
+                            /[^0-9.]/g,
+                            ""
+                          );
+                        }}
                       />
                       <FiPlusCircle color="#5e537f" onClick={handleIncrease} />
                     </div>
@@ -192,7 +206,8 @@ const NFTMedia = ({
                 <div className={style["info"]}>
                   <p className={style["text-white"]}>Total Price</p>
                   <span className={style["text-blue"]}>
-                    {amount} {saleList?.paymentToken?.tokenSymbol}
+                    {amount ? amount : "0"}{" "}
+                    {saleList?.paymentToken?.tokenSymbol}
                   </span>
                 </div>
               </div>
