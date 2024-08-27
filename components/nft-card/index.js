@@ -79,7 +79,9 @@ const NFTCard = ({ nft }) => {
                   ></div>
                 </div>
                 <div className={style["progress-text"]}>
-                  <span>24/3000 CARV Node sold</span>
+                  <span>
+                    24/{nft?.saleAmount} {nft?.saleToken?.tokenName} sold
+                  </span>
                   <span>25%</span>
                 </div>
               </div>
