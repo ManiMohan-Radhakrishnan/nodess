@@ -74,10 +74,10 @@ const HomeNodessList = () => {
                   <div className="col-md-8">
                     <h1 className="me-4 text-nowrap">NODESS SALE</h1>
                     <p className={style["sub-heading-p"]}>
-                      Missed out on some of the NFTs? Don’t worry! You can still
-                      grab your favorite NFTs in our Listed NFTs section. Time
-                      is ticking—don’t miss your chance to own a piece of
-                      history. Get yours now!
+                      Missed out on some of the nodes? Don’t worry! You can
+                      still grab your favorite nodes in our Listed Nodes
+                      section. Time is ticking—don’t miss your chance to own a
+                      piece of history. Get yours now!
                     </p>
                   </div>
                 </div>
