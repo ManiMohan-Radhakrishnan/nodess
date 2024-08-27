@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 
@@ -7,10 +7,12 @@ import BannerImage from "../../images/banner-img.png";
 
 import style from "./style.module.scss";
 import "swiper/css/pagination";
+import "swiper/css/effect-fade";
 import { TbWorld } from "react-icons/tb";
 import { RiTwitterXFill } from "react-icons/ri";
 import ToolTip from "../tooltip";
 import { BsFillQuestionCircleFill } from "react-icons/bs";
+import images from "../../utils/images-new.json";
 
 const HeroBanner = ({}) => {
   const swiperRef = useRef();
@@ -23,13 +25,93 @@ const HeroBanner = ({}) => {
           className={`${style["verifier-hero-carousel"]}`}
           slidesPerView={1}
           centeredSlides={true}
-          modules={[Navigation, Autoplay, Pagination]}
+          modules={[Navigation, Autoplay, EffectFade, Pagination]}
           pagination={{ clickable: true }}
-          autoplay={{ delay: 15000, disableOnInteraction: true }}
+          autoplay={{ delay: 1500, disableOnInteraction: true }} // Enable autoplay
           speed={500}
-          // loop
-          uniqueNavElements
+          loop
+          effect={"fade"}
         >
+          <SwiperSlide>
+            <div className="item">
+              <section className={`${style["hero-banner-sec"]}`}>
+                <div className={style["banner-content-wrapper"]}>
+                  <div className={style["image-content-wrapper"]}>
+                    <Image
+                      fetchpriority="high"
+                      unoptimized={true}
+                      width="300"
+                      height="300"
+                      priority={true}
+                      loading="eager"
+                      placeholder={"blur"}
+                      blurDataURL={"/sample.gif"}
+                      alt="BannerImage"
+                      src={BannerImage}
+                      role="button"
+                    />
+                  </div>
+                  <div className={style["content-wrapper"]}>
+                    <div className={style["inner-content-wrapper"]}>
+                      <h1>NODESS SALE</h1>
+                      <div className={style["secial-icon-wrapper"]}>
+                        <TbWorld color="#a69dbe" />
+                        <RiTwitterXFill color="#a69dbe" />
+                        <TbWorld color="#a69dbe" />
+                        <RiTwitterXFill color="#a69dbe" />
+                        <TbWorld color="#a69dbe" />
+                        <RiTwitterXFill color="#a69dbe" />
+                        <TbWorld color="#a69dbe" />
+                        <RiTwitterXFill color="#a69dbe" />
+                      </div>
+                      <p>
+                        NODESS Sale is the leading modular data layer for
+                        gaming, AI, and beyond, driving a future where data
+                        creates value for everyone.
+                      </p>
+                      <div className={style["network-wrapper"]}>
+                        <div className={style["icon-wrapper"]}>
+                          <p>Network</p>
+                          <ToolTip
+                            icon={
+                              <BsFillQuestionCircleFill
+                                color={"#a984fdcc"}
+                                size={14}
+                                className="mb-1 check-icon"
+                              />
+                            }
+                            content={
+                              <>
+                                Available networks in this token sale. Switch
+                                network via the wallet to participate.. <br />
+                              </>
+                            }
+                            placement="top"
+                          />
+                        </div>
+                        <Image
+                          fetchpriority="high"
+                          unoptimized={true}
+                          width="20"
+                          height="20"
+                          priority={true}
+                          loading="eager"
+                          placeholder={"blur"}
+                          blurDataURL={"/sample.gif"}
+                          alt="BannerImage"
+                          src={
+                            "https://verifier.carv.io/images/icons/networks/42161.svg"
+                          }
+                          role="button"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </SwiperSlide>
+
           <SwiperSlide>
             <div className="item">
               <section className={`${style["hero-banner-sec"]}`}>
