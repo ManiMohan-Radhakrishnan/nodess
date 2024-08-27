@@ -115,26 +115,28 @@ const HeroBanner = ({}) => {
           <SwiperSlide>
             <div className="item">
               <section className={`${style["hero-banner-sec"]}`}>
-                <div className={style["banner-content-wrapper"]}>
-                  <div className={style["image-content-wrapper"]}>
-                    <Image
-                      fetchpriority="high"
-                      unoptimized={true}
-                      width="300"
-                      height="300"
-                      priority={true}
-                      loading="eager"
-                      placeholder={"blur"}
-                      blurDataURL={"/sample.gif"}
-                      alt="BannerImage"
-                      src={BannerImage}
-                      role="button"
-                    />
-                  </div>
-                  <div className={style["content-wrapper"]}>
+                <div className={style["bg-content-wrapper"]}>
+                  <Image
+                    fetchpriority="high"
+                    unoptimized={true}
+                    width="300"
+                    height="300"
+                    priority={true}
+                    loading="eager"
+                    placeholder={"blur"}
+                    blurDataURL={"/sample.gif"}
+                    alt="BannerImage"
+                    src={
+                      "https://cimg.co/news/85706/216084/adobestock-phive2015-1.jpeg"
+                    }
+                    role="button"
+                  />
+                  <div
+                    className={`${style["content-container"]} ${style["justify-end"]}`}
+                  >
                     <div className={style["inner-content-wrapper"]}>
                       <h1>NODESS SALE</h1>
-                      <div className={style["secial-icon-wrapper"]}>
+                      {/* <div className={style["secial-icon-wrapper"]}>
                         <TbWorld color="#a69dbe" />
                         <RiTwitterXFill color="#a69dbe" />
                         <TbWorld color="#a69dbe" />
@@ -143,48 +145,56 @@ const HeroBanner = ({}) => {
                         <RiTwitterXFill color="#a69dbe" />
                         <TbWorld color="#a69dbe" />
                         <RiTwitterXFill color="#a69dbe" />
-                      </div>
+                      </div> */}
                       <p>
                         NODESS Sale is the leading modular data layer for
                         gaming, AI, and beyond, driving a future where data
                         creates value for everyone.
                       </p>
-                      <div className={style["network-wrapper"]}>
-                        <div className={style["icon-wrapper"]}>
-                          <p>Network</p>
-                          <ToolTip
-                            icon={
-                              <BsFillQuestionCircleFill
-                                color={"#a984fdcc"}
-                                size={14}
-                                className="mb-1 check-icon"
-                              />
-                            }
-                            content={
-                              <>
-                                Available networks in this token sale. Switch
-                                network via the wallet to participate.. <br />
-                              </>
-                            }
-                            placement="top"
-                          />
-                        </div>
-                        <Image
-                          fetchpriority="high"
-                          unoptimized={true}
-                          width="20"
-                          height="20"
-                          priority={true}
-                          loading="eager"
-                          placeholder={"blur"}
-                          blurDataURL={"/sample.gif"}
-                          alt="BannerImage"
-                          src={
-                            "https://verifier.carv.io/images/icons/networks/42161.svg"
-                          }
-                          role="button"
-                        />
-                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <div className="item">
+              <section className={`${style["hero-banner-sec"]}`}>
+                <div className={style["bg-content-wrapper"]}>
+                  <Image
+                    fetchpriority="high"
+                    unoptimized={true}
+                    width="300"
+                    height="300"
+                    priority={true}
+                    loading="eager"
+                    placeholder={"blur"}
+                    blurDataURL={"/sample.gif"}
+                    alt="BannerImage"
+                    src={
+                      "https://t3.ftcdn.net/jpg/02/87/64/68/360_F_287646869_EpBkmeh4ESmhE8jmSRYd8JH1BVfXoRxs.jpg"
+                    }
+                    role="button"
+                  />
+                  <div className={style["content-container"]}>
+                    <div className={style["inner-content-wrapper"]}>
+                      <h1>NODESS SALE</h1>
+                      {/* <div className={style["secial-icon-wrapper"]}>
+                        <TbWorld color="#a69dbe" />
+                        <RiTwitterXFill color="#a69dbe" />
+                        <TbWorld color="#a69dbe" />
+                        <RiTwitterXFill color="#a69dbe" />
+                        <TbWorld color="#a69dbe" />
+                        <RiTwitterXFill color="#a69dbe" />
+                        <TbWorld color="#a69dbe" />
+                        <RiTwitterXFill color="#a69dbe" />
+                      </div> */}
+                      <p>
+                        NODESS Sale is the leading modular data layer for
+                        gaming, AI, and beyond, driving a future where data
+                        creates value for everyone.
+                      </p>
                     </div>
                   </div>
                 </div>
