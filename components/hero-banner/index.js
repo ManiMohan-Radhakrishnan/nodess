@@ -232,7 +232,7 @@ const HeroBanner = ({}) => {
                           blurDataURL={"/sample.gif"}
                           alt="BannerImage"
                           src={
-                            "https://cdn-icons-png.freepik.com/512/14993/14993567.png"
+                            "https://cdn-icons-png.freepik.com/512/14446/14446222.png?uid=R160862078"
                           }
                           role="button"
                         />

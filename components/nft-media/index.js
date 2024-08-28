@@ -104,10 +104,7 @@ const NFTMedia = ({
                       ></div>
                     </div>
                     <div className={style["progress-text"]}>
-                      <span>
-                        24/{saleList?.saleAmount}{" "}
-                        {saleList?.saleToken?.tokenName} sold
-                      </span>
+                      <span>24/{saleList?.saleAmount} Node sold</span>
                       <span>25%</span>
                     </div>
                   </div>

@@ -147,8 +147,9 @@ const Details = () => {
                       alt="media_logo_check11"
                       className="small-icon"
                       src={
-                        "https://cdn-icons-png.freepik.com/512/14993/14993567.png"
+                        "https://cdn-icons-png.freepik.com/512/14446/14446222.png?uid=R160862078"
                       }
+                      // "https://cdn-icons-png.freepik.com/512/14993/14993567.png"
                       role="button"
                     />
                   </div>
