@@ -197,11 +197,12 @@ const HeroBanner = ({}) => {
                         <IoNewspaperSharp color="#a69dbe" />
                       </div>
                       <p>
-                        The ultimate platform for buying and selling
-                        decentralized nodes. Whether your&apos;e looking to
-                        expand your network or sell your existing nodes, our
-                        marketplace provides a secure, transparent, and
-                        efficient environment for all your node trading needs.
+                        Unlock the potential of decentralized compute power with
+                        our cutting-edge distributed infrastructure marketplace.
+                        BAF Node Sale offers enterprise-grade GPU technology for
+                        AI, gaming, and more, enabling you to contribute to a
+                        scalable, reliable, and high-performance computing
+                        revolution.
                       </p>
                       <div className={style["network-wrapper"]}>
                         <div className={style["icon-wrapper"]}>
