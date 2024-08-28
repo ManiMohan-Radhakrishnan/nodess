@@ -241,10 +241,10 @@ const NFTMedia = ({
                   Buy Now
                 </button>
               )}
-              <a href="/" className={style["link"]}>
+              {/* <a href="/" className={style["link"]}>
                 Get more WETH or Wrap your ETH
                 <LiaExternalLinkAltSolid color="#fff" />
-              </a>
+              </a> */}
             </div>
           </section>
         </>

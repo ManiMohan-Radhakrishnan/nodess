@@ -12,14 +12,18 @@ const NFTPropertiesTwo = ({ saleList }) => {
             className={`d-flex justify-content-between align-items-center border-top p-3 ${style["border-cus-clr"]}`}
           >
             <span>Node</span>
-            <span>{saleList?.saleToken?.tokenName}</span>
+            <span>
+              {/* {saleList?.saleToken?.tokenName} */}
+              Node
+            </span>
           </li>
           <li
             className={`d-flex justify-content-between align-items-center border-top p-3 ${style["border-cus-clr"]}`}
           >
             <span>Node for Sale</span>
             <span>
-              {saleList?.saleAmount} {saleList?.saleToken?.tokenName}
+              {saleList?.saleAmount} Node
+              {/* {saleList?.saleToken?.tokenName} */}
             </span>
           </li>
         </ul>
