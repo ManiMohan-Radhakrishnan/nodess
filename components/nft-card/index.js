@@ -38,7 +38,7 @@ const NFTCard = ({ nft }) => {
                 </li>
                 <li>
                   <span>Node for Sale</span>
-                  <span>{nft?.saleAmount} CARV Node</span>
+                  <span>{nft?.saleAmount} Node</span>
                 </li>
                 <li>
                   <span>Pay in</span>

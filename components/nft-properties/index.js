@@ -13,7 +13,7 @@ const NFTProperties = ({ saleList }) => {
           >
             <span>Price per Node</span>
             <span>
-              1 CARV Node = {saleList?.purchasePeriod?.salePrice}{" "}
+              1 Node = {saleList?.purchasePeriod?.salePrice}{" "}
               {saleList?.paymentToken?.tokenSymbol}
             </span>
           </li>

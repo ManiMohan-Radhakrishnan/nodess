@@ -147,7 +147,7 @@ const Details = () => {
                       alt="media_logo_check11"
                       className="small-icon"
                       src={
-                        "https://verifier.carv.io/images/icons/networks/42161.svg"
+                        "https://cdn-icons-png.freepik.com/512/14993/14993567.png"
                       }
                       role="button"
                     />
