@@ -19,6 +19,7 @@ import {
 import NFTSold from "../../components/nft-soldout";
 import NFTSuccess from "../../components/nft-success";
 import Footer from "../../components/footer";
+import { toast } from "react-toastify";
 
 const Details = () => {
   const router = useRouter();
@@ -94,13 +95,14 @@ const Details = () => {
       setSignature(signature);
       setSuccess(true);
       setModalShow(true);
+      // toast.success("Node sale Successfully");
       // Set a timeout to clear the signature after 2 minutes
       setTimeout(() => {
         setModalShow(false);
         setSoldOut(true);
 
         console.log("Signature cleared after 2 minutes");
-      }, 5000); // 120,000 milliseconds = 2 minutes
+      }, 3000); // 120,000 milliseconds = 2 minutes
     } catch (error) {
       console.error("Error signing message:", error);
     }
@@ -188,8 +190,16 @@ const Details = () => {
                 ) : soldOut ? (
                   <>
                     {" "}
-                    <div className="col-12 col-lg-7">
+                    {/* <div className="col-12 col-lg-7">
                       <NFTSold />
+                    </div> */}
+                    <div className="col-12 col-lg-7">
+                      <NFTMedia
+                        saleList={saleList}
+                        walletCollectionStatus={walletCollectionStatus}
+                        Balance={balance}
+                        handleSignIn={handleSignIn}
+                      />
                     </div>
                   </>
                 ) : (
