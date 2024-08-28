@@ -198,10 +198,10 @@ const HeroBanner = ({}) => {
                       </div>
                       <p>
                         The ultimate platform for buying and selling
-                        decentralized nodes. Whether you're looking to expand
-                        your network or sell your existing nodes, our
+                        decentralized nodes. Whether your&apos;e looking to
+                        expand your network or sell your existing nodes, our
                         marketplace provides a secure, transparent, and
-                        efficient environment for all your node trading needs."
+                        efficient environment for all your node trading needs.
                       </p>
                       <div className={style["network-wrapper"]}>
                         <div className={style["icon-wrapper"]}>
