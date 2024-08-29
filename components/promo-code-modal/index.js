@@ -5,6 +5,9 @@ import { BiX } from "react-icons/bi";
 import { toast } from "react-toastify";
 import { FaCheckCircle } from "react-icons/fa";
 const PromoCodeModal = ({ modalShow, setModalShow }) => {
+  const [inputValue, setInputValue] = useState("");
+  console.log("🚀 ~ PromoCodeModal ~ inputValue:", inputValue);
+
   const handleClose = () => {
     setModalShow(false);
   };
@@ -13,6 +16,10 @@ const PromoCodeModal = ({ modalShow, setModalShow }) => {
     toast.success("PromoCode Applyed Sucessfully", {
       icon: <FaCheckCircle size={50} color="green" />,
     });
+  };
+
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
   };
   return (
     <>
@@ -41,13 +48,21 @@ const PromoCodeModal = ({ modalShow, setModalShow }) => {
               confirmation referrer has purchased a node.
             </p>
             <div className={style["input-wrapper"]}>
-              <input type="text" />
+              <input
+                type="text"
+                value={inputValue}
+                onChange={handleInputChange}
+              />
             </div>
             <div className={style["button-wrapper"]}>
               <button className={style["btn-primary"]} onClick={handleClose}>
                 Cancel
               </button>
-              <button className={style["btn-secondary"]} onClick={handleApply}>
+              <button
+                className={style["btn-secondary"]}
+                disabled={!inputValue}
+                onClick={handleApply}
+              >
                 Apply
               </button>
             </div>

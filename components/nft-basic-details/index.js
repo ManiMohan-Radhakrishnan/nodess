@@ -6,8 +6,24 @@ import dayjs from "dayjs";
 import ToolTip from "../tooltip";
 import { BsFillQuestionCircleFill } from "react-icons/bs";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import NFTCounter from "../nft-counter";
 
 const NFTBaseDetails = ({ saleList }) => {
+  const [currentDate, setCurrentDate] = useState("");
+  console.log("🚀 ~ NFTBaseDetails ~ currentDate:", currentDate);
+
+  useEffect(() => {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0"); // Months are zero-indexed
+    const day = String(date.getDate()).padStart(2, "0");
+
+    // Format the date to MM/DD/YYYY
+    const formattedDate = `${month}/${day}/${year}`;
+    setCurrentDate(formattedDate);
+  }, []);
+
   return (
     <>
       <section className={style["verifier-info-block"]}>
@@ -58,13 +74,20 @@ const NFTBaseDetails = ({ saleList }) => {
               role="button"
             />{" "}
             <div className={style["title-wrapper"]}>
-              <p> Purchased</p>
-              Start
+              <h5 className="m-0"> Node Ends In :</h5>
             </div>
             <div className={style["title-wrapper"]}>
-              {dayjs(saleList?.purchasePeriod?.startTime).format(
+              {/* {dayjs(saleList?.purchasePeriod?.startTime).format(
                 "MMMM D, YYYY"
-              )}
+              )}{" "} */}
+              <div className={style["time-counter"]}>
+                <NFTCounter
+                  time={"2024-09-10"}
+                  timeClass="alert-counter-time"
+                  intervalClass="alert-counter-interval"
+                  intervalGapClass="alert-counter-gap"
+                />
+              </div>
             </div>
           </div>
         </div>
