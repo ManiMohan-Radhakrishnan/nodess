@@ -60,7 +60,7 @@ const HeroBanner = ({}) => {
                   </div>
                   <div className={style["content-wrapper"]}>
                     <div className={style["inner-content-wrapper"]}>
-                      <h1>NODESS SALE</h1>
+                      <h1>NODE SALE</h1>
                       <div className={style["secial-icon-wrapper"]}>
                         <TbWorld color="#a69dbe" />
                         <RiTwitterXFill color="#a69dbe" />
@@ -72,7 +72,7 @@ const HeroBanner = ({}) => {
                         <RiTwitterXFill color="#a69dbe" />
                       </div>
                       <p>
-                        NODESS Sale is the leading modular data layer for
+                        NODE SALE is the leading modular data layer for
                         gaming, AI, and beyond, driving a future where data
                         creates value for everyone.
                       </p>
@@ -142,7 +142,7 @@ const HeroBanner = ({}) => {
                     className={`${style["content-container"]} ${style["justify-end"]}`}
                   >
                     <div className={style["inner-content-wrapper"]}>
-                      <h1>NODESS SALE</h1>
+                      <h1>NODE SALE</h1>
                       <div className={style["secial-icon-wrapper"]}>
                         <TbWorld color="#a69dbe" />
                         <RiTwitterXFill color="#a69dbe" />
@@ -154,7 +154,7 @@ const HeroBanner = ({}) => {
                         <RiTwitterXFill color="#a69dbe" />
                       </div>
                       <p>
-                        NODESS Sale is the leading modular data layer for
+                        NODE SALE is the leading modular data layer for
                         gaming, AI, and beyond, driving a future where data
                         creates value for everyone.
                       </p>
@@ -186,7 +186,7 @@ const HeroBanner = ({}) => {
                   />
                   <div className={style["content-container"]}>
                     <div className={style["inner-content-wrapper"]}>
-                      <h1>NODESS SALE</h1>
+                      <h1>NODE SALE</h1>
                       <div className={style["secial-icon-wrapper"]}>
                         <TbWorld color="#a69dbe" />
                         <RiTwitterXFill color="#a69dbe" />

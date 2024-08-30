@@ -51,7 +51,7 @@ const Header = ({ bgImage = false }) => {
                   window.open(process.env.NEXT_PUBLIC_WEBSITE_URL, "_self");
                 }}
               >
-                <h3>NODESS SALE</h3>
+                <h3>NODE SALE</h3>
               </div> */}
             </Navbar.Brand>
 
