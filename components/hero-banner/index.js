@@ -20,6 +20,7 @@ import { BsFillQuestionCircleFill } from "react-icons/bs";
 import images from "../../utils/images-new.json";
 import { IoNewspaperSharp } from "react-icons/io5";
 import BannerImage1 from "../../images/banner.png";
+import ParticleCanvas from "../particle-canvas";
 
 const HeroBanner = ({}) => {
   const swiperRef = useRef();
@@ -169,7 +170,7 @@ const HeroBanner = ({}) => {
             <div className="item">
               <section className={`${style["hero-banner-sec"]}`}>
                 <div className={style["bg-content-wrapper"]}>
-                  <Image
+                  {/* <Image
                     fetchpriority="high"
                     unoptimized={true}
                     width="300"
@@ -183,7 +184,15 @@ const HeroBanner = ({}) => {
                       "https://img.freepik.com/free-photo/abstract-technology-background-concept_1194-617185.jpg"
                     }
                     role="button"
-                  />
+                  /> */}
+                  <div
+                    style={{
+                      width: "100%",
+                      height: "100vh",
+                    }}
+                  >
+                    <ParticleCanvas />
+                  </div>
                   <div className={style["content-container"]}>
                     <div className={style["inner-content-wrapper"]}>
                       <h1>NODE SALE</h1>

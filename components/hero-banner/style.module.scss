@@ -22,6 +22,13 @@
       position: relative;
       background-color: #1d1c2c;
       overflow: hidden;
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(45deg, black, transparent);
+        z-index: 2;
+      }
       @media screen and (max-width: 767px) {
         justify-content: flex-start;
       }
@@ -1669,6 +1676,13 @@
       background-color: #000;
       overflow: hidden;
       padding: 1rem;
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(45deg, black, transparent);
+        z-index: 2;
+      }
       @media screen and (min-width: 992px) {
         padding: 2rem 3rem;
         min-height: 75vh;
@@ -1690,11 +1704,11 @@
           display: flex;
           align-items: center;
           padding: 2rem 1rem;
-          background: linear-gradient(
-            51deg,
-            #000000bd 0%,
-            rgba(0, 0, 0, 0.22) 150%
-          );
+          // background: linear-gradient(
+          //   51deg,
+          //   #000000bd 0%,
+          //   rgba(0, 0, 0, 0.22) 150%
+          // );
 
           @media screen and (min-width: 992px) {
             padding: 2rem 3rem;
