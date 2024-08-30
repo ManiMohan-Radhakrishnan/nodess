@@ -144,7 +144,10 @@ const NFTMedia = ({
                 <div className={style["max-count-wrapper"]}>
                   <div>
                     <div style={{ display: "flex", alignItems: "center" }}>
-                      <FiMinusCircle color="#5e537f" onClick={handleDecrease} />
+                      <FiMinusCircle
+                        className={style["icon"]}
+                        onClick={handleDecrease}
+                      />
                       <input
                         type="number"
                         id="amount"
@@ -163,7 +166,10 @@ const NFTMedia = ({
                           );
                         }}
                       />
-                      <FiPlusCircle color="#5e537f" onClick={handleIncrease} />
+                      <FiPlusCircle
+                        className={style["icon"]}
+                        onClick={handleIncrease}
+                      />
                     </div>
                   </div>
                   <span
@@ -218,7 +224,7 @@ const NFTMedia = ({
               {!value ? (
                 <>
                   <button className={style["btn-balance"]} disabled={true}>
-                    Enter Amount
+                    Enter Quantity
                   </button>
                 </>
               ) : InsufficientBalance ? (

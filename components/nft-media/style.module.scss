@@ -346,3 +346,14 @@
 .how-to-link:hover {
   text-decoration: underline;
 }
+
+.icon {
+  cursor: pointer;
+  font-size: 24px;
+  // transition: color 0.3s;
+  color: #544285;
+}
+
+.icon:hover {
+  color: #9466f2;
+}
