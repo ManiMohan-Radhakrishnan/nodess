@@ -72,13 +72,13 @@ const HomeNodessList = () => {
                   className={`${style["sec-heading"]} d-flex align-items-center mb-5 ${style["explore-heading"]}`}
                 >
                   <div className="col-md-8">
-                    <h1 className="me-4 text-nowrap">NODE SALE</h1>
-                    <p className={style["sub-heading-p"]}>
+                    <h1 className="me-4 text-nowrap">Listed Node Sale</h1>
+                    {/* <p className={style["sub-heading-p"]}>
                       Missed out on some of the nodes? Don’t worry! You can
                       still grab your favorite nodes in our Listed Nodes
                       section. Time is ticking—don’t miss your chance to own a
                       piece of history. Get yours now!
-                    </p>
+                    </p> */}
                   </div>
                 </div>
                 <div className="row">
